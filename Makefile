@@ -6,7 +6,7 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 13:15:12 by tnard             #+#    #+#              #
-#    Updated: 2021/12/09 13:15:58 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/12/09 15:52:50 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ BLU			= \033[0;34m
 GRN			= \033[0;32m
 RED			= \033[0;31m
 RST			= \033[0m
+END			= \e[0m
 
 SRCS		= push_swap.c
 NAME		= push_swap
@@ -27,11 +28,11 @@ $(OBJS_DIR)%.o : %.c includes/push_swap.h
 	@mkdir -p $(OBJS_DIR)
 	@mkdir -p $(OBJS_DIR)srcs
 	@$(CC) $(CC_FLAGS) -c $< -o $@
-	@echo "${BLU}[BUILD - $(NAME)]${RST} $@"
+	@printf	"\033[2K\r${BLU}[BUILD]${RST} '$<' $(END)"
 
 $(NAME): $(OBJECTS_PREFIXED) maker
 	@$(CC) -o $(NAME) $(OBJECTS_PREFIXED) $(CC_FLAGS) libft/libft.a ft_printf/libftprintf.a
-	@echo "\n\033[0;32m$(NAME) compiled !\033[0m\n"
+	@echo "\033[0;32m[END]\033[0m $(NAME)"
 
 all: $(NAME)
 

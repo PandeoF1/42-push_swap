@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 12:50:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/09 13:15:44 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/09 14:16:54 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
+# include <limits.h>
 
 #endif
