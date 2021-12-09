@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 12:58:33 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/09 13:24:39 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/09 13:28:31 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ static int	ft_check_arg(char *str)
 	{
 		if (!ft_isdigit(str[x]))
 			return (0);
-		while (str[x] && ft_isdigit(str[x]))
+		while (str[x] && (ft_isdigit(str[x]) || str[x] == '-'))
 			x++;
 		if (!str[x])
 			return (1);
 		if (str[x] && str[x] != ' ')
-			return (0); 
+			return (0);
 	}
 	return (1);
 }
