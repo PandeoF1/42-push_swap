@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 12:58:33 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/10 13:14:41 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/10 15:32:35 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,26 +66,20 @@ static int	ft_space_len(char *str)
 static int	ft_check_one_arg(char *str)
 {
 	int	x;
-	int	n_double[OPEN_MAX + 1];
 
 	x = -1;
 	while (str[++x])
 	{
-		if (str[x] && str[x] != ' ' && !ft_isdigit(str[x]))
-			return (0);
-		while (str[x] && (ft_atoi_check(str + x)))
+		ft_printf("je suis sur : %c\n", str[x]);
+		if (ft_isdigit(str[x]))
 		{
-			ft_printf("Je suis sur : %c\n", str[x]);
-			if (!n_double[ft_atoi(str + x)])
-				n_double[ft_atoi(str + x)] = 0;
-			else
-				return (0);
-			x += ft_int_len(ft_atoi(str + x));
-			if (str[x] && ft_space_len(str + x) == 1)
-				x++;
-			else if (str[x])
-				return (1);
+			ft_printf("nombre : %i\n", ft_atoi(str + x));
+			x += ft_int_len(ft_atoi(str + x)) - 1;
 		}
+		else if (str[x] == ' ')
+			x++;
+		else
+			return (0);
 	}
 	return (1);
 }
