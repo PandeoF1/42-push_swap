@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 12:50:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/10 17:48:18 by asaffroy         ###   ########lyon.fr   */
+/*   Created: 2021/12/10 17:34:44 by asaffroy          #+#    #+#             */
+/*   Updated: 2021/12/10 18:11:18 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "includes/push_swap.h"
 
-# include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
-# include <limits.h>
+char	*ft_sort_tab(char *str)
+{
+	int		i;
+	char	temp;
+	char	*tab;
 
-char	*ft_sort_tab(char *str);
-
-#endif
+	i = -1;
+	tab = malloc(sizeof(char) * ft_strlen(str));
+	if (!tab)
+		return (0);
+	while (str[++i])
+		tab[i] = str[i];
+	i = 0;
+	while (tab[i])
+	{
+		if (tab[i + 1] && (tab[i + 1] < tab[i]))
+		{
+			temp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = temp;
+			i = -1;
+		}
+		i++;
+	}
+	return (tab);
+}

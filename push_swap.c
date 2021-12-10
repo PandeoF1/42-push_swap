@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 12:58:33 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/10 15:32:35 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/10 18:12:36 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ static int	ft_check_one_arg(char *str)
 int	main(int argc, char *argv[])
 {
 	if (argc == 2 && ft_check_one_arg(argv[1]))
-		ft_printf("gg");
+		ft_printf("gg\n");
+	ft_printf("%s\n", ft_sort_tab("963214454556456415641514545456456451234647489789784545454548477508"));
 		//ft_push_swap(argv[1]);
 	//else if (argc > 2 && ft_check_args(argc, argv))
 		//ft_printf("gg");
