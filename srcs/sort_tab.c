@@ -12,14 +12,14 @@
 
 #include "../includes/push_swap.h"
 
-char	*ft_sort_tab(char *str)
+int	*ft_sort_tab(int *str, int size)
 {
-	int		i;
-	char	temp;
-	char	*tab;
+	int	i;
+	int	temp;
+	int	*tab;
 
 	i = -1;
-	tab = malloc(sizeof(char) * ft_strlen(str));
+	tab = malloc(sizeof(int) * size);
 	if (!tab)
 		return (0);
 	while (str[++i])

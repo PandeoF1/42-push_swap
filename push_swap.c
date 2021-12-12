@@ -120,11 +120,17 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", number[x++]);
 		ft_printf("\n");
+//##################################################je print juste mon tableau trié ###############################################################################
+		ft_printf("sorted tab : ");
+		x = 0;
+		while (x < size)
+			ft_printf("%d ", ft_sort_tab(number, size)[x++]);
+		ft_printf("\n");
+//##################################################FIN , t moche###############################################################################
 		free(number);
 	}
 	else
 		ft_usage();
-	//ft_printf("%s\n", ft_sort_tab("963214454556456415641514545456456451234647489789784545454548477508"));
 		//ft_push_swap(argv[1]);
 	//else if (argc > 2 && ft_check_args(argc, argv))
 		//ft_printf("gg");

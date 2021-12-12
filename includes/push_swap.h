@@ -17,6 +17,6 @@
 # include "../ft_printf/ft_printf.h"
 # include <limits.h>
 
-char	*ft_sort_tab(char *str);
+int	*ft_sort_tab(int *str, int size);
 
 #endif
