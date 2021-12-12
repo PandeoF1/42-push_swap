@@ -120,13 +120,15 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", number[x++]);
 		ft_printf("\n");
+		number = ft_sort_tab(number, size);
 //##################################################je print juste mon tableau trié ###############################################################################
 		ft_printf("sorted tab : ");
 		x = 0;
 		while (x < size)
-			ft_printf("%d ", ft_sort_tab(number, size)[x++]);
+			ft_printf("%d ", number[x++]);
 		ft_printf("\n");
 //##################################################FIN , t moche###############################################################################
+		ft_swap(number, size);
 		free(number);
 	}
 	else

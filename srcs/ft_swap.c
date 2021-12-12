@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/09 12:50:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/10 17:48:18 by asaffroy         ###   ########lyon.fr   */
+/*   Created: 2021/12/12 18:14:58 by asaffroy          #+#    #+#             */
+/*   Updated: 2021/12/12 18:14:58 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# include "../libft/libft.h"
-# include "../ft_printf/ft_printf.h"
-# include <limits.h>
+int	*ft_swap(int *number, int size)
+{
+	int	mid;
+	int	*a;
+	int	*b;
 
-int	*ft_sort_tab(int *str, int size);
-int	*ft_swap(int *number, int size);
-
-#endif
+	mid = number[size / 2];
+	a = number;
+	b = malloc(sizeof(int) * size);
+	if (!b)
+		return (NULL);
+}

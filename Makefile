@@ -16,7 +16,7 @@ RED			= \033[0;31m
 RST			= \033[0m
 END			= \e[0m
 
-SRCS		= push_swap.c srcs/sort_tab.c \
+SRCS		= push_swap.c srcs/sort_tab.c srcs/ft_swap.c\
 
 NAME		= push_swap
 OBJS_DIR	= objs/
