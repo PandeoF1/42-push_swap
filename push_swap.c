@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 12:58:33 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/10 18:12:36 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/12 05:19:27 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,29 +66,65 @@ static int	ft_space_len(char *str)
 static int	ft_check_one_arg(char *str)
 {
 	int	x;
+	int	b;
 
-	x = -1;
-	while (str[++x])
+	x = 0;
+	b = 0;
+	while (str[x])
 	{
-		ft_printf("je suis sur : %c\n", str[x]);
 		if (ft_isdigit(str[x]))
 		{
-			ft_printf("nombre : %i\n", ft_atoi(str + x));
-			x += ft_int_len(ft_atoi(str + x)) - 1;
+			if (str[x] == '0')
+				x++;
+			else
+				x += ft_int_len(ft_atoi(str + x));
+			b++;
 		}
 		else if (str[x] == ' ')
 			x++;
 		else
 			return (0);
 	}
-	return (1);
+	return (b);
+}
+
+int *ft_splittochar(char **str, int *y)
+{
+	int		*number;
+
+	(*y) = 0;
+	while (str[(*y)])
+		(*y)++;
+	number = malloc(sizeof(int) * (*y));
+	(*y) = 0;
+	while (str[(*y)])
+	{
+		number[(*y)] = ft_atoi(str[(*y)]);
+		(*y)++;
+	}
+	return (number);
 }
 
 int	main(int argc, char *argv[])
 {
-	if (argc == 2 && ft_check_one_arg(argv[1]))
-		ft_printf("gg\n");
-	ft_printf("%s\n", ft_sort_tab("963214454556456415641514545456456451234647489789784545454548477508"));
+	int	*number;
+	int	size;
+	int	x;
+
+	x = 0;
+	size = 0;
+	if (argc == 2 && ft_strlen(argv[1]) && ft_check_one_arg(argv[1]) != 1 && ft_check_one_arg(argv[1]) != 0)
+	{
+		number = ft_splittochar(ft_split(argv[1], ' '), &size);
+		ft_printf("size : %d\ntab : ", size);
+		while (x < size)
+			ft_printf("%d ", number[x++]);
+		ft_printf("\n");
+		free(number);
+	}
+	else
+		ft_usage();
+	//ft_printf("%s\n", ft_sort_tab("963214454556456415641514545456456451234647489789784545454548477508"));
 		//ft_push_swap(argv[1]);
 	//else if (argc > 2 && ft_check_args(argc, argv))
 		//ft_printf("gg");

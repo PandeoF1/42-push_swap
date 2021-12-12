@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 13:15:12 by tnard             #+#    #+#              #
-#    Updated: 2021/12/10 17:51:08 by asaffroy         ###   ########lyon.fr    #
+#    Updated: 2021/12/12 05:03:48 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@ RED			= \033[0;31m
 RST			= \033[0m
 END			= \e[0m
 
-SRCS		= push_swap.c\
-			sort_tab.c\
+SRCS		= push_swap.c srcs/sort_tab.c \
 
 NAME		= push_swap
 OBJS_DIR	= objs/

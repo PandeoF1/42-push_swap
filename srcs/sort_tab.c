@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 17:34:44 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/10 18:11:18 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/12 05:03:58 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 char	*ft_sort_tab(char *str)
 {
