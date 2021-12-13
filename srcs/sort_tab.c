@@ -22,12 +22,12 @@ int	*ft_sort_tab(int *str, int size)
 	tab = malloc(sizeof(int) * size);
 	if (!tab)
 		return (0);
-	while (str[++i])
+	while (++i < size)
 		tab[i] = str[i];
 	i = 0;
-	while (tab[i])
+	while (i < size)
 	{
-		if (tab[i + 1] && (tab[i + 1] < tab[i]))
+		if ((i + 1) < size && (tab[i + 1] < tab[i]))
 		{
 			temp = tab[i];
 			tab[i] = tab[i + 1];

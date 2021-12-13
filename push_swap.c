@@ -107,28 +107,35 @@ int *ft_splittochar(char **str, int *y)
 
 int	main(int argc, char *argv[])
 {
-	int	*number;
-	int	size;
-	int	x;
+	int			*number;
+	int			*sorted_tab;
+	int			size;
+	int			x;
+	t_data		data;
+	t_pile_a	pile_a;
+	t_pile_b	pile_b;
 
+	data.pile_a = &pile_a;
+	data.pile_b = &pile_b;
 	x = 0;
 	size = 0;
-	if (argc == 2 && ft_strlen(argv[1]) && ft_check_one_arg(argv[1]) != 1 && ft_check_one_arg(argv[1]) != 0)
+	if (argc == 2 && ft_strlen(argv[1]) && ft_check_one_arg(argv[1]) != 1
+		&& ft_check_one_arg(argv[1]) != 0)
 	{
 		number = ft_splittochar(ft_split(argv[1], ' '), &size);
 		ft_printf("size : %d\ntab : ", size);
 		while (x < size)
 			ft_printf("%d ", number[x++]);
 		ft_printf("\n");
-		number = ft_sort_tab(number, size);
-//##################################################je print juste mon tableau trié ###############################################################################
+		sorted_tab = ft_sort_tab(number, size);
+//#################################je print juste mon tableau trié #####
 		ft_printf("sorted tab : ");
 		x = 0;
 		while (x < size)
-			ft_printf("%d ", number[x++]);
+			ft_printf("%d ", sorted_tab[x++]);
 		ft_printf("\n");
-//##################################################FIN , t moche###############################################################################
-		ft_swap(number, size);
+//##################################FIN , t moche########################
+		ft_swap(&data, number, size, sorted_tab);
 		free(number);
 	}
 	else

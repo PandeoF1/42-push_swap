@@ -16,8 +16,34 @@
 # include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
 # include <limits.h>
+# include <stdlib.h>
 
-int	*ft_sort_tab(int *str, int size);
-int	*ft_swap(int *number, int size);
+typedef struct s_pile_a
+{
+	int				i;
+	struct s_pile_a	*next;
+	struct s_pile_a	*prev;
+}	t_pile_a;
+
+typedef struct s_pile_b
+{
+	int				i;
+	struct s_pile_b	*next;
+	struct s_pile_b	*prev;
+}	t_pile_b;
+
+typedef struct s_data
+{
+	struct s_pile_a	*pile_a;
+	struct s_pile_b	*pile_b;
+	struct s_pile_a	*first_a;
+	struct s_pile_a	*last_a;
+	struct s_pile_a	*temp;
+}	t_data;
+
+int		*ft_sort_tab(int *str, int size);
+int		*ft_swap(t_data *data, int *number, int size, int *sorted_tab);
+void	add_nmb_a(t_data *data, int nmb);
+void	add_nmb_b(t_data *data, int nmb);
 
 #endif
