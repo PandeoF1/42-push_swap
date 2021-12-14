@@ -6,7 +6,7 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 13:15:12 by tnard             #+#    #+#              #
-#    Updated: 2021/12/14 12:03:37 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/12/14 15:31:53 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RED			= \033[0;31m
 RST			= \033[0m
 END			= \e[0m
 
-SRCS		= push_swap.c srcs/sort_tab.c srcs/ft_swap.c srcs/ft_pile_a.c srcs/ft_pile_b.c\
+SRCS		= push_swap.c srcs/ft_r.c srcs/ft_s.c srcs/ft_p.c srcs/sort_tab.c srcs/ft_swap.c srcs/ft_pile_a.c srcs/ft_pile_b.c\
 
 NAME		= push_swap
 OBJS_DIR	= objs/
@@ -38,7 +38,7 @@ $(NAME): $(OBJECTS_PREFIXED) maker
 all: $(NAME)
 
 maker:
-	@make -C libft
+	@make -C libft bonus
 	@make -C ft_printf
 
 clean:

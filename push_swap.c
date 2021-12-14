@@ -137,17 +137,17 @@ char	*ft_argc_to_tab(char **argv, int argc, int *size)
 	return (str);
 }
 
-int	ft_check_double(int *number)
+int	ft_check_double(int *number, int size)
 {
 	int	x;
 	int	y;
 
 	x = 0;
 	y = 0;
-	while (number[x])
+	while (x < size)
 	{
 		y = 0;
-		while (number[y])
+		while (y < size)
 		{
 			if (x != y && number[x] == number[y])
 				return (0);
@@ -180,7 +180,7 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", number[x++]);
 		ft_printf("\n");
-		if (ft_check_double(number) == 0)
+		if (ft_check_double(number, size) == 0)
 		{
 			ft_printf("Error : double numbers\n");
 			return (0);
@@ -205,7 +205,7 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", number[x++]);
 		ft_printf("\n");
-		if (ft_check_double(number) == 0)
+		if (ft_check_double(number, size) == 0)
 		{
 			ft_printf("Error : double numbers\n");
 			return (0);
