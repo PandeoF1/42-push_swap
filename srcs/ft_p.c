@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_p.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:13:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/14 16:38:22 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/14 17:11:51 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,28 @@ void	ft_pa(t_data *data)
 void	ft_pb(t_data *data)
 {
 	t_pile	*tmp;
+	int		i;
 
+	tmp = malloc(sizeof(t_pile));
 	if (data->size_b > 0)
 	{
-		tmp = data->pile_a;
+		tmp->i = data->pile_a->i;
 		tmp->next = data->pile_b;
 		data->pile_b = tmp;
+		tmp = data->pile_a;
 		data->pile_a = data->pile_a->next;
 		free(tmp);
 	}
 	else if (data->size_b == 0)
 	{
-		tmp = data->pile_a;
-		data->last_b = tmp;
+		tmp->i = data->pile_a->i;
 		data->pile_b = tmp;
+		data->pile_b->next = NULL;
+		tmp = data->pile_a;
+		data->pile_a = data->pile_a->next;
+		free(tmp);
 	}
 	data->size_b++;
+	data->size_a--;
 	ft_printf("pb\n");
 }

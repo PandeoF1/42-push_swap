@@ -12,6 +12,27 @@
 
 #include "../includes/push_swap.h"
 
+static void	ft_printls(t_data *date)
+{
+	t_pile	*tmp;
+
+	tmp = date->pile_a;
+	ft_printf("Debut a :\n");
+	while (tmp)
+	{
+		ft_printf("%i\n", tmp->i);
+		tmp = tmp->next;
+	}
+	ft_printf("Fin a.\nDebut b :\n");
+	tmp = date->pile_b;
+	while (tmp)
+	{
+		ft_printf("%i\n", tmp->i);
+		tmp = tmp->next;
+	}
+	ft_printf("Fin b.\n");
+}
+
 static int	ft_init(t_data *data, int *number, int size)
 {
 	int		x;
@@ -24,7 +45,8 @@ static int	ft_init(t_data *data, int *number, int size)
 	data->last_a = data->pile_a;
 	while (data->last_a->next)
 		data->last_a = data->last_a->next;
-	data->last_b = NULL;
+	data->pile_b->next = NULL;
+	ft_printf("TEEEEEESSSSSSTTTTT : %d\n", data->pile_b->i);
 	return (x);
 }
 
@@ -48,7 +70,8 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			{
 				// ft_printf("pb\n");
 				ft_pb(data);
-				ft_printf("pb_test%d\n", data->pile_b->i);
+				ft_printls(data);
+				//ft_printf("pb_test%d\n", data->pile_b->i);
 				len_b++;
 			}
 			else if (data->last_a->i < mid)
