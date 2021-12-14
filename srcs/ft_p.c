@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:13:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/14 16:08:03 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/14 16:11:39 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ void	ft_pb(t_data *data)
 		data->last_b = tmp;
 		data->pile_b = tmp;
 	}
+	ft_printf("pb\n");
 }
