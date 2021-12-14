@@ -18,12 +18,11 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 	int				x;
 	int				len_b;
 
-	mid = number[size / 2];
 	x = -1;
 	while (++x < size)
 		add_nmb_a(data, number[x]);
 	data->size_a = x;
-	data->size_b = x - 2;
+	data->size_b = 0;
 	data->last_a = data->pile_a;
 	while (data->last_a->next)
 	{
@@ -31,10 +30,13 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		data->last_a = data->last_a->next;
 		data->last_a->prev = data->temp;
 	}
-	while(len_b)
+	x = 0;
+	while (x < data->size_b)
 	{
+		size /= 2;
+		mid = number[size];
 		len_b = 0;
-		while (len_b < (mid - 1))
+		while (len_b < size + 1)
 		{
 			if (data->pile_a->i < mid)
 			{
@@ -60,6 +62,7 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 				}
 			}
 		}
+		x += len_b;
 	}
 	return (0);
 }
