@@ -77,6 +77,7 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			else if (data->last_a->i < mid)
 			{
 				ft_printf("rra\n");
+				ft_printls(data);
 				ft_printf("pb\n");
 				len_b++;
 			}
@@ -84,10 +85,12 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			{
 				if (data->pile_a->i > mid)
 				{
-					ft_printf("ra\n");
+					ft_ra(data);
+					ft_printls(data);
 					if (data->pile_a->i < mid)
 					{
-						ft_printf("pb\n");
+						ft_pb(data);
+						ft_printls(data);
 						len_b++;
 					}
 				}
