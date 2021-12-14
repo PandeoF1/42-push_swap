@@ -36,7 +36,6 @@ typedef struct s_data
 {
 	struct s_pile_a	*pile_a;
 	struct s_pile_b	*pile_b;
-	struct s_pile_a	*first_a;
 	struct s_pile_a	*last_a;
 	struct s_pile_a	*temp;
 	int				size_a;
