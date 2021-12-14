@@ -137,6 +137,27 @@ char	*ft_argc_to_tab(char **argv, int argc, int *size)
 	return (str);
 }
 
+int	ft_check_double(int *number)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	y = 0;
+	while (number[x])
+	{
+		y = 0;
+		while (number[y])
+		{
+			if (x != y && number[x] == number[y])
+				return (0);
+			y++;
+		}
+		x++;
+	}
+	return (1);
+}
+
 int	main(int argc, char *argv[])
 {
 	int			*number;
@@ -159,6 +180,13 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", number[x++]);
 		ft_printf("\n");
+		if (ft_check_double(number) == 0)
+		{
+			ft_printf("Error : double numbers\n");
+			return (0);
+		}
+
+
 		sorted_tab = ft_sort_tab(number, size);
 //#################################je print juste mon tableau trié #####
 		ft_printf("sorted tab : ");
@@ -177,6 +205,22 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", number[x++]);
 		ft_printf("\n");
+		if (ft_check_double(number) == 0)
+		{
+			ft_printf("Error : double numbers\n");
+			return (0);
+		}
+
+		sorted_tab = ft_sort_tab(number, size);
+//#################################je print juste mon tableau trié #####
+		ft_printf("sorted tab : ");
+		x = 0;
+		while (x < size)
+			ft_printf("%d ", sorted_tab[x++]);
+		ft_printf("\n");
+//##################################FIN , t moche########################
+		ft_swap(&data, number, size, sorted_tab);
+		free(number);
 		// ton code ici
 	}
 	else
