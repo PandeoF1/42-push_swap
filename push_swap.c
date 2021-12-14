@@ -165,8 +165,8 @@ int	main(int argc, char *argv[])
 	int			size;
 	int			x;
 	t_data		data;
-	t_pile_a	pile_a;
-	t_pile_b	pile_b;
+	t_pile	pile_a;
+	t_pile	pile_b;
 
 	data.pile_a = &pile_a;
 	data.pile_b = &pile_b;

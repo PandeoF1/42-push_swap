@@ -18,27 +18,21 @@
 # include <limits.h>
 # include <stdlib.h>
 
-typedef struct s_pile_a
+typedef struct s_pile
 {
 	int				i;
-	struct s_pile_a	*next;
-	struct s_pile_a	*prev;
-}	t_pile_a;
+	struct s_pile	*next;
+	struct s_pile	*prev;
+}	t_pile;
 
-typedef struct s_pile_b
-{
-	int				i;
-	struct s_pile_b	*next;
-	struct s_pile_b	*prev;
-}	t_pile_b;
 
 typedef struct s_data
 {
-	struct s_pile_a	*pile_a;
-	struct s_pile_b	*pile_b;
-	struct s_pile_a	*last_a;
-	struct s_pile_b	*last_b;
-	struct s_pile_a	*temp;
+	struct s_pile	*pile_a;
+	struct s_pile	*pile_b;
+	struct s_pile	*last_a;
+	struct s_pile	*last_b;
+	struct s_pile	*temp;
 	int				size_a;
 	int				size_b;
 }	t_data;

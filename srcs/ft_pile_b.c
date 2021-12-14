@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pile_b.c                                        :+:      :+:    :+:   */
+/*   ft_pile.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "../includes/push_swap.h"
 
-t_pile_b	*new_nmb_b(int nmb)
+t_pile	*new_nmb_b(int nmb)
 {
-	t_pile_b	*pile_b;
+	t_pile	*pile_b;
 
-	pile_b = malloc(sizeof(t_pile_b));
+	pile_b = malloc(sizeof(t_pile));
 	if (pile_b == NULL)
 	{
 		ft_printf("ERROR\nmalloc of struct nmb failed\n");
@@ -28,9 +28,9 @@ t_pile_b	*new_nmb_b(int nmb)
 	return (pile_b);
 }
 
-t_pile_b	*last_nmb_b(t_pile_b *list)
+t_pile	*last_nmb_b(t_pile *list)
 {
-	t_pile_b	*temp;
+	t_pile	*temp;
 
 	if (!list)
 		return (list);
@@ -46,7 +46,7 @@ t_pile_b	*last_nmb_b(t_pile_b *list)
 void	add_nmb_b(t_data *data, int nmb)
 {
 	static int		a = 0;
-	t_pile_b		*new;
+	t_pile		*new;
 
 	new = new_nmb_b(nmb);
 	if (new == NULL)
