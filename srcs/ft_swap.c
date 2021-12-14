@@ -12,12 +12,9 @@
 
 #include "../includes/push_swap.h"
 
-int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
+static void	ft_init(t_data *data, int *number, int size)
 {
-	int				mid;
-	int				x;
-	int				len_b;
-	int				y;
+	int		x;
 
 	x = -1;
 	while (++x < size)
@@ -26,11 +23,18 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 	data->size_b = 0;
 	data->last_a = data->pile_a;
 	while (data->last_a->next)
-	{
-		data->temp = data->last_a;
 		data->last_a = data->last_a->next;
-		data->last_a->prev = data->temp;
-	}
+	data->last_b = NULL;
+}
+
+int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
+{
+	int				mid;
+	int				x;
+	int				len_b;
+	int				y;
+
+	x = -1;
 	y = 0;
 	while (y < x - 2)
 	{
