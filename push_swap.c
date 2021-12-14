@@ -88,7 +88,23 @@ static int	ft_check_one_arg(char *str)
 	return (b);
 }
 
-int *ft_splittochar(char **str, int *y)
+static int	ft_check_mult_arg(char **argv, int argc)
+{
+	int	x;
+	int	b;
+
+	x = 1;
+	b = 0;
+	while (x < argc)
+	{
+		if (ft_check_one_arg(argv[x]) == 0)
+			return (0);
+		x++;
+	}
+	return (1);
+}
+
+int	*ft_splittochar(char **str, int *y)
 {
 	int		*number;
 
@@ -103,6 +119,22 @@ int *ft_splittochar(char **str, int *y)
 		(*y)++;
 	}
 	return (number);
+}
+
+char	*ft_argc_to_tab(char **argv, int argc, int *size)
+{
+	char	*str;
+	int		x;
+
+	x = 2;
+	str = ft_strdup(argv[1]);
+	while (x < argc && argv[x])
+	{
+		str = ft_strjoin(str, " ");
+		str = ft_strjoin(str, argv[x]);
+		x++;
+	}
+	return (str);
 }
 
 int	main(int argc, char *argv[])
@@ -137,6 +169,15 @@ int	main(int argc, char *argv[])
 //##################################FIN , t moche########################
 		ft_swap(&data, number, size, sorted_tab);
 		free(number);
+	}
+	else if (argc > 2 && ft_check_mult_arg(argv, argc) == 1)
+	{
+		number = ft_splittochar(ft_split(ft_argc_to_tab(argv, argc, &size), ' '), &size);
+		ft_printf("size : %d\ntab : ", size);
+		while (x < size)
+			ft_printf("%d ", number[x++]);
+		ft_printf("\n");
+		// ton code ici
 	}
 	else
 		ft_usage();

@@ -54,7 +54,7 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 				//data->first_a = data->first_a->prev;
 				//printf("guh%d\n", data->first_a->i);
 				//data->first_a = data->first_a->next;
-				printf("gud%d\n", data->last_a->i);
+				ft_printf("gud%d\n", data->last_a->i);
 			}
 			// data->first_a = data->pile_a;
 			// while (data->first_a->next)
