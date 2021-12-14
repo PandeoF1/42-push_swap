@@ -41,7 +41,8 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		{
 			if (data->pile_a->i < mid)
 			{
-				ft_printf("pb\n");
+				// ft_printf("pb\n");
+				ft_pb(data);
 				len_b++;
 			}
 			else if (data->last_a->i < mid)
