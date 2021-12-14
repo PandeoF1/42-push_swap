@@ -39,6 +39,8 @@ typedef struct s_data
 	struct s_pile_a	*first_a;
 	struct s_pile_a	*last_a;
 	struct s_pile_a	*temp;
+	int				size_a;
+	int				size_b;
 }	t_data;
 
 int		*ft_sort_tab(int *str, int size);
