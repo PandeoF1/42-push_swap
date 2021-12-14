@@ -59,10 +59,10 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 
 	x = ft_init(data, number, size);
 	y = 0;
-	while (y < x - 2)
+	while (y < (x - 2))
 	{
 		size /= 2;
-		mid = number[size];
+		mid = sorted_tab[size];
 		len_b = 0;
 		while (len_b < size)
 		{
@@ -95,6 +95,7 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 					}
 				}
 			}
+			ft_printf("len : %d\n" , len_b);
 		}
 		y += len_b;
 	}
