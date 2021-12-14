@@ -17,20 +17,20 @@ static void	ft_printls(t_data *date)
 	t_pile	*tmp;
 
 	tmp = date->pile_a;
-	ft_printf("Debut a :\n");
+	ft_printf("Debut a : ");
 	while (tmp)
 	{
-		ft_printf("%i\n", tmp->i);
+		ft_printf("%i - ", tmp->i);
 		tmp = tmp->next;
 	}
-	ft_printf("Fin a.\nDebut b :\n");
+	ft_printf("\nFin a.\nDebut b : ");
 	tmp = date->pile_b;
 	while (tmp)
 	{
-		ft_printf("%i\n", tmp->i);
+		ft_printf("%i - ", tmp->i);
 		tmp = tmp->next;
 	}
-	ft_printf("Fin b.\n");
+	ft_printf("\nFin b.\n");
 }
 
 static int	ft_init(t_data *data, int *number, int size)
