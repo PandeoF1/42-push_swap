@@ -145,31 +145,24 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 	y = 0;
 	while (y < (x - 2))
 	{
-		size /= 2;
-		mid = sorted_tab[size];
 		len_b = 0;
+		size = data->size_a / 2;
+		mid = sorted_tab[size];
 		while (len_b < size)
 		{
-			ft_printls(data);
 			if (data->pile_a->i < mid)
 			{
 				ft_pb(data);
-				//ft_printls(data);
 				len_b++;
 			}
 			else if (data->last_a->i < mid)
-			{
 				ft_rra(data);
-				//ft_printls(data);
-			}
 			else
 			{
 				if (data->pile_a->i >= mid)
-				{
 					ft_ra(data);
-					//ft_printls(data);
-				}
 			}
+		//ft_printls(data);
 		}
 		y += len_b;
 		free(sorted_tab);
@@ -177,7 +170,8 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		sorted_tab = ft_sort_tab(sorted_tab, data->size_a);
 		if (data->size_a == 2)
 		{
-			ft_pb(data);
+			if (data->pile_a->i > data->pile_a->next->i)
+				ft_ra(data);
 		}
 		ft_chunk(data);
 		//ft_printchunk(data);
