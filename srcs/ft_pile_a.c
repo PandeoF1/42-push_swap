@@ -29,8 +29,6 @@ t_pile	*new_nmb_a(int nmb)
 
 t_pile	*last_nmb_a(t_pile *list)
 {
-	t_pile	*temp;
-
 	if (!list)
 		return (list);
 	while (list->next != NULL)

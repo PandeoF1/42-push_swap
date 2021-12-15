@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:13:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/15 12:59:25 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 16:10:18 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_pa(t_data *data)
 {
 	t_pile	*tmp;
-	int		i;
 
 	tmp = malloc(sizeof(t_pile));
 	if (!tmp)
@@ -44,7 +43,6 @@ void	ft_pa(t_data *data)
 void	ft_pb(t_data *data)
 {
 	t_pile	*tmp;
-	int		i;
 
 	tmp = malloc(sizeof(t_pile));
 	if (!tmp)

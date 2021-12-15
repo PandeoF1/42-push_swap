@@ -31,7 +31,7 @@ static void	ft_usage(void)
 	ft_printf("usage: ./push_swap [numbers]\n");
 	exit(0);
 }
-
+/*
 static int	ft_atoi_check(char *str)
 {
 	long	i;
@@ -46,8 +46,8 @@ static int	ft_atoi_check(char *str)
 	if (str[i] != ' ' && str[i] != '\0')
 		return (0);
 	return (1);
-}
-
+}*/
+/*
 static int	ft_space_len(char *str)
 {
 	int	x;
@@ -61,7 +61,7 @@ static int	ft_space_len(char *str)
 			return (x);
 	}
 	return (x);
-}
+}*/
 
 static int	ft_check_one_arg(char *str)
 {
@@ -123,7 +123,7 @@ int	*ft_splittochar(char **str, int *y)
 	return (number);
 }
 
-char	*ft_argc_to_tab(char **argv, int argc, int *size)
+char	*ft_argc_to_tab(char **argv, int argc)
 {
 	char	*tmp;
 	char	*str;
@@ -208,7 +208,7 @@ int	main(int argc, char *argv[])
 	}
 	else if (argc > 2 && ft_check_mult_arg(argv, argc) == 1)
 	{
-		str = ft_argc_to_tab(argv, argc, &size);
+		str = ft_argc_to_tab(argv, argc);
 		strr = ft_split(str, ' ');
 
 		number = ft_splittochar(strr, &size);
@@ -231,6 +231,7 @@ int	main(int argc, char *argv[])
 		ft_printf("\n");
 		
 		ft_swap(&data, number, size, sorted_tab);
+		ft_free(&data);
 		free(str);
 		x = 0;
 		while (strr[x])

@@ -62,6 +62,6 @@ void	ft_ra(t_data *data);
 void	ft_rb(t_data *data);
 void	ft_rra(t_data *data);
 void	ft_rrb(t_data *data);
-void	ft_free(t_free *data);
+void	ft_free(t_data *data);
 
 #endif

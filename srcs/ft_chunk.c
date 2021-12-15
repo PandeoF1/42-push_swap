@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:44:00 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/15 15:52:55 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 16:10:53 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ t_chunk	*new_nmb_c(int *tab, int i)
 
 t_chunk	*last_nmb_c(t_chunk *list)
 {
-	t_chunk	*temp;
-
 	if (!list)
 		return (list);
 	while (list->next != NULL)
