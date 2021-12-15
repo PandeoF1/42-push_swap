@@ -176,10 +176,8 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			else if (data->last_a->i < mid)
 				ft_rra(data);
 			else
-			{
 				if (data->pile_a->i >= mid)
 					ft_ra(data);
-			}
 			//ft_printls(data);
 		}
 		y += len_b;
