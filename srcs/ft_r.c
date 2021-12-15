@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_r.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:16:51 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/15 12:54:58 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 13:01:22 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,17 @@ void	ft_ra(t_data *data)
 	ft_printf("ra\n");
 }
 
+void	ft_rb(t_data *data)
+{
+	t_pile	*tmp;
+
+	tmp = data->pile_b->next;
+	data->last_b->next = data->pile_b;
+	data->last_b->next->next = NULL;
+	data->pile_b = tmp;
+	ft_printf("rb\n");
+}
+
 void	ft_rra(t_data *data)
 {
 	int		x;
@@ -35,7 +46,24 @@ void	ft_rra(t_data *data)
 		data->last_a->next = data->pile_a;
 		data->last_a->next->next = NULL;
 		data->pile_a = tmp;
-		free(tmp);
 		x++;
 	}
+	ft_printf("rra\n");
+}
+
+void	ft_rra(t_data *data)
+{
+	int		x;
+	t_pile	*tmp;
+
+	x = 0;
+	while (x < data->size_a - 1)
+	{
+		tmp = data->pile_b->next;
+		data->last_b->next = data->pile_b;
+		data->last_b->next->next = NULL;
+		data->pile_b = tmp;
+		x++;
+	}
+	ft_printf("rrb\n");
 }

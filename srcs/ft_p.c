@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:13:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/14 17:37:53 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 12:59:25 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,31 @@
 
 void	ft_pa(t_data *data)
 {
-	if (data->size_b > 0)
+	t_pile	*tmp;
+	int		i;
+
+	tmp = malloc(sizeof(t_pile));
+	if (!tmp)
+		return ;
+	if (data->size_a > 0)
 	{
-		data->last_a->next = data->pile_b;
-		data->pile_b->prev = data->last_a;
-		data->last_a = data->pile_b;
+		tmp->i = data->pile_b->i;
+		tmp->next = data->pile_a;
+		data->pile_a = tmp;
+		tmp = data->pile_b;
 		data->pile_b = data->pile_b->next;
-		data->last_a->next = NULL;
-		data->size_a++;
-		data->size_b--;
 	}
+	else if (data->size_a == 0)
+	{
+		tmp->i = data->pile_b->i;
+		data->pile_a = tmp;
+		data->pile_a->next = NULL;
+		tmp = data->pile_a;
+		data->pile_b = data->pile_b->next;
+		data->last_a = data->pile_a;
+	}
+	free(tmp);
+	ft_printf("pa\n", data->size_a++, data->size_b--);
 }
 
 void	ft_pb(t_data *data)
@@ -32,7 +47,8 @@ void	ft_pb(t_data *data)
 	int		i;
 
 	tmp = malloc(sizeof(t_pile));
-	//check malloc
+	if (!tmp)
+		return ;
 	if (data->size_b > 0)
 	{
 		tmp->i = data->pile_a->i;
@@ -40,7 +56,6 @@ void	ft_pb(t_data *data)
 		data->pile_b = tmp;
 		tmp = data->pile_a;
 		data->pile_a = data->pile_a->next;
-		free(tmp);
 	}
 	else if (data->size_b == 0)
 	{
@@ -50,9 +65,7 @@ void	ft_pb(t_data *data)
 		tmp = data->pile_a;
 		data->pile_a = data->pile_a->next;
 		data->last_b = data->pile_b;
-		free(tmp);
 	}
-	data->size_b++;
-	data->size_a--;
-	ft_printf("pb\n");
+	free(tmp);
+	ft_printf("pb\n", data->size_b++, data->size_a--);
 }
