@@ -134,7 +134,12 @@ static int	ft_init(t_data *data, int *number, int size)
 	return (x);
 }
 
-int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
+void	ft_swap2(data)
+{
+
+}
+
+void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 {
 	int				mid;
 	int				x;
@@ -162,7 +167,7 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 				if (data->pile_a->i >= mid)
 					ft_ra(data);
 			}
-		//ft_printls(data);
+		ft_printls(data);
 		}
 		y += len_b;
 		free(sorted_tab);
@@ -172,9 +177,10 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		{
 			if (data->pile_a->i > data->pile_a->next->i)
 				ft_ra(data);
+			ft_printls(data);
 		}
 		ft_chunk(data);
-		//ft_printchunk(data);
+		ft_printchunk(data);
 	}
-	return (0);
+	ft_swap2(data);
 }

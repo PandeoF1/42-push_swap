@@ -46,7 +46,7 @@ typedef struct s_data
 }	t_data;
 
 int		*ft_sort_tab(int *str, int size);
-int		*ft_swap(t_data *data, int *number, int size, int *sorted_tab);
+void	ft_swap(t_data *data, int *number, int size, int *sorted_tab);
 void	add_nmb_a(t_data *data, int nmb);
 void	add_nmb_b(t_data *data, int nmb);
 void	ft_chunk(t_data *data);
