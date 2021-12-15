@@ -160,9 +160,6 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			{
 				ft_rra(data);
 				//ft_printls(data);
-				//ft_pb(data);
-				//ft_printls(data);
-				//len_b++;
 			}
 			else
 			{
@@ -179,9 +176,8 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		sorted_tab = ft_sort_tab(sorted_tab, data->size_a);
 		if (data->size_a == 2)
 		{
-			ft_2a(data);
+			ft_ra(data);
 			//ft_printls(data);
-			ft_pb(data);
 		}
 		ft_chunk(data);
 		//ft_printchunk(data);
