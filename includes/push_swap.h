@@ -46,5 +46,6 @@ void	ft_pa(t_data *data);
 void	ft_pb(t_data *data);
 void	ft_ra(t_data *data);
 void	ft_2a(t_data *data);
+void	ft_rra(t_data *data);
 
 #endif
