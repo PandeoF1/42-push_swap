@@ -47,7 +47,7 @@ static int	ft_atoi_check(char *str)
 		return (0);
 	return (1);
 }*/
-/*
+
 static int	ft_space_len(char *str)
 {
 	int	x;
@@ -61,7 +61,7 @@ static int	ft_space_len(char *str)
 			return (x);
 	}
 	return (x);
-}*/
+}
 
 static int	ft_check_one_arg(char *str)
 {
@@ -123,21 +123,40 @@ int	*ft_splittochar(char **str, int *y)
 	return (number);
 }
 
+char	*ft_strcat(char *dest, char *src)
+{
+	int	n;
+	int	a;
+
+	n = 0;
+	a = 0;
+	while (dest[n])
+		n++;
+	while (src[a])
+		dest[n++] = src[a++];
+	dest[n] = '\0';
+	return (dest);
+}
+
 char	*ft_argc_to_tab(char **argv, int argc)
 {
-	char	*tmp;
 	char	*str;
 	int		x;
+	int		y;
 
-	x = 2;
-	str = ft_strdup(argv[1]);
-	while (x < argc && argv[x])
+	x = 1;
+	y = 0;
+	str = malloc(sizeof(char) * (ft_space_len(argv[1]) + 1));
+	while (x < argc)
 	{
-		tmp = str;
-		free(str);
-		str = ft_strjoin(tmp, " ");
-		str = ft_strjoin(str, argv[x]);
-		free(tmp);
+		y += ft_strlen(argv[x]);
+		x++;
+	}
+	str[y] = '\0';
+	x = 1;
+	while (x < argc)
+	{
+		ft_strcat(str, argv[x]);
 		x++;
 	}
 	return (str);
@@ -231,7 +250,6 @@ int	main(int argc, char *argv[])
 		ft_printf("\n");
 		
 		ft_swap(&data, number, size, sorted_tab);
-		ft_free(&data);
 		free(str);
 		x = 0;
 		while (strr[x])
