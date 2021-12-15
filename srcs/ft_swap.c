@@ -12,6 +12,26 @@
 
 #include "../includes/push_swap.h"
 
+static void	ft_printchunk(t_data *data)
+{
+	t_pile	*tmp;
+	int		x;
+
+	tmp = data->chunk;
+	while (tmp)
+	{
+		x = 0;
+		while (x < tmp->size)
+		{
+			ft_printf("%d ", tmp->tab[x]);
+			x++;
+		}
+		ft_printf("\n");
+		tmp = tmp->next;
+	}
+	ft_printf("\n");
+}
+
 static void	ft_printls(t_data *date)
 {
 	t_pile	*tmp;
@@ -30,6 +50,7 @@ static void	ft_printls(t_data *date)
 	y = 0;
 	tmp = date->pile_a;
 	str1 = ft_strdup(ft_itoa(tmp->i));
+	tmp = tmp->next;
 	while (tmp)
 	{
 		str1 = ft_strjoin(str1, " ");
@@ -38,13 +59,15 @@ static void	ft_printls(t_data *date)
 	}
 	tmp = date->pile_b;
 	str2 = ft_strdup(ft_itoa(tmp->i));
+	tmp = tmp->next;
 	while (tmp)
 	{
 		str2 = ft_strjoin(str2, " ");
 		str2 = ft_strjoin(str2, ft_itoa(tmp->i));
 		tmp = tmp->next;
 	}
-	ft_printf("Tab : \n");
+	ft_printf("\n");
+	ft_printf("     TAB\n");
 	ft_printf("┌───────────┐\n");
 	ft_printf("│  A  │  B  │\n");
 	ft_printf("│     │     │\n");
@@ -54,7 +77,7 @@ static void	ft_printls(t_data *date)
 		a++;
 	while (split2[b])
 		b++;
-	while (x != a && y != b)
+	while (x < a || y < b)
 	{
 		if (x < a && y < b)
 			ft_printf("│  %s  │  %s  │\n", split1[x++], split2[y++]);
