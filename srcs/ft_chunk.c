@@ -6,7 +6,7 @@
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:44:00 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/15 11:18:54 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 11:45:32 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_chunk	*new_nmb_c(int *tab)
 		ft_printf("ERROR\nmalloc of struct nmb failed\n");
 		exit(EXIT_FAILURE);
 	}
-	new_c->tab = *tab;
+	new_c->tab = tab;
 	new_c->next = NULL;
 	return (new_c);
 }
@@ -68,6 +68,7 @@ int	*ft_chunk2(t_data *data)
 		tmp = tmp->next;
 		i++;
 	}
+	i -= data->in_list;
 	tab = malloc(sizeof(int) * i);
 	if (!tab)
 		return (NULL);
@@ -79,10 +80,11 @@ int	*ft_chunk2(t_data *data)
 		tmp = tmp->next;
 		i++;
 	}
+	data->in_list += i;
 	return (tab);
 }
 
 void	*ft_chunk(t_data *data)
 {
-	add_nmb_c()
+	add_nmb_c(data, ft_chunk2(data));
 }

@@ -106,6 +106,7 @@ static int	ft_init(t_data *data, int *number, int size)
 	while (data->last_a->next)
 		data->last_a = data->last_a->next;
 	data->pile_b->next = NULL;
+	data->in_list = 0;
 	return (x);
 }
 
@@ -156,7 +157,7 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		y += len_b;
 		free(sorted_tab);
 		sorted_tab = ft_maketab(data);
-		//ft_chunk(data);
+		ft_chunk(data);
 		sorted_tab = ft_sort_tab(sorted_tab, data->size_a);
 		if (data->size_a == 2)
 		{
