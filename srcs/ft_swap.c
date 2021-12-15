@@ -15,22 +15,55 @@
 static void	ft_printls(t_data *date)
 {
 	t_pile	*tmp;
+	char	*str1;
+	char	*str2;
+	char	**split1;
+	char	**split2;
+	int		a;
+	int		b;
+	int		x;
+	int		y;
 
+	a = 0;
+	b = 0;
+	x = 0;
+	y = 0;
 	tmp = date->pile_a;
-	ft_printf("Debut a : ");
+	str1 = ft_strdup(ft_itoa(tmp->i));
 	while (tmp)
 	{
-		ft_printf("%i - ", tmp->i);
+		str1 = ft_strjoin(str1, " ");
+		str1 = ft_strjoin(str1, ft_itoa(tmp->i));
 		tmp = tmp->next;
 	}
-	ft_printf("\nFin a.\nDebut b : ");
 	tmp = date->pile_b;
+	str2 = ft_strdup(ft_itoa(tmp->i));
 	while (tmp)
 	{
-		ft_printf("%i - ", tmp->i);
+		str2 = ft_strjoin(str2, " ");
+		str2 = ft_strjoin(str2, ft_itoa(tmp->i));
 		tmp = tmp->next;
 	}
-	ft_printf("\nFin b.\n");
+	ft_printf("Tab : \n");
+	ft_printf("┌───────────┐\n");
+	ft_printf("│  A  │  B  │\n");
+	ft_printf("│     │     │\n");
+	split1 = ft_split(str1, ' ');
+	split2 = ft_split(str2, ' ');
+	while (split1[a])
+		a++;
+	while (split2[b])
+		b++;
+	while (x != a && y != b)
+	{
+		if (x < a && y < b)
+			ft_printf("│  %s  │  %s  │\n", split1[x++], split2[y++]);
+		else if (x < a)
+			ft_printf("│  %s  │  %s  │\n", split1[x++], " ");
+		else if (y < b)
+			ft_printf("│  %s  │  %s  │\n", " ", split2[y++]);
+	}
+	ft_printf("└───────────┘\n");
 }
 
 static int	*ft_maketab(t_data *date)
