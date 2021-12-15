@@ -28,6 +28,7 @@ typedef struct s_pile
 typedef struct s_chunk
 {
 	int				*tab;
+	int				size;
 	struct s_chunk	*next;
 }	t_chunk;
 
@@ -48,7 +49,7 @@ int		*ft_sort_tab(int *str, int size);
 int		*ft_swap(t_data *data, int *number, int size, int *sorted_tab);
 void	add_nmb_a(t_data *data, int nmb);
 void	add_nmb_b(t_data *data, int nmb);
-void	*ft_chunk(t_data *data);
+void	ft_chunk(t_data *data);
 
 void	ft_pa(t_data *data);
 void	ft_pb(t_data *data);

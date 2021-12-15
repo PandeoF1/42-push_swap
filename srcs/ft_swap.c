@@ -14,13 +14,14 @@
 
 static void	ft_printchunk(t_data *data)
 {
-	t_pile	*tmp;
+	t_chunk	*tmp;
 	int		x;
 
 	tmp = data->chunk;
 	while (tmp)
 	{
 		x = 0;
+		ft_printf("Chunk (%d): ", tmp->size);
 		while (x < tmp->size)
 		{
 			ft_printf("%d ", tmp->tab[x]);
@@ -180,7 +181,6 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		y += len_b;
 		free(sorted_tab);
 		sorted_tab = ft_maketab(data);
-		ft_chunk(data);
 		sorted_tab = ft_sort_tab(sorted_tab, data->size_a);
 		if (data->size_a == 2)
 		{
@@ -188,6 +188,8 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			ft_pb(data);
 		}
 		ft_printls(data);
+		ft_chunk(data);
+		ft_printchunk(data);
 	}
 	return (0);
 }
