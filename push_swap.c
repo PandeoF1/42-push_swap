@@ -165,11 +165,13 @@ int	main(int argc, char *argv[])
 	int			size;
 	int			x;
 	t_data		data;
-	t_pile	pile_a;
-	t_pile	pile_b;
+	t_pile		pile_a;
+	t_pile		pile_b;
+	t_chunk		chunk;
 
 	data.pile_a = &pile_a;
 	data.pile_b = &pile_b;
+	data.chunk = &chunk;
 	x = 0;
 	size = 0;
 	if (argc == 2 && ft_strlen(argv[1]) && ft_check_one_arg(argv[1]) != 1

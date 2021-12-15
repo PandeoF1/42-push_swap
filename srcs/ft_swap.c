@@ -33,24 +33,23 @@ static void	ft_printls(t_data *date)
 	ft_printf("\nFin b.\n");
 }
 
-static int	*ft_maketab(t_data *date)
+static int	*ft_maketab(t_data *data)
 {
 	t_pile	*tmp;
 	int		*tab;
 	int		i;
 
 	i = 0;
-	tmp = date->pile_a;
+	tmp = data->pile_a;
 	while (tmp)
 	{
 		tmp = tmp->next;
 		i++;
 	}
-	date->size_tab = i;
 	tab = malloc(sizeof(int) * i);
 	if (!tab)
 		return (NULL);
-	tmp = date->pile_a;
+	tmp = data->pile_a;
 	i = 0;
 	while (tmp)
 	{
@@ -124,8 +123,9 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		y += len_b;
 		free(sorted_tab);
 		sorted_tab = ft_maketab(data);
-		sorted_tab = ft_sort_tab(sorted_tab, data->size_tab);
-		if (data->size_tab == 2)
+		//ft_chunk(data);
+		sorted_tab = ft_sort_tab(sorted_tab, data->size_a);
+		if (data->size_a == 2)
 		{
 			ft_2a(data);
 			ft_pb(data);
