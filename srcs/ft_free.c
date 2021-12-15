@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:05:12 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/15 16:24:35 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 17:35:57 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_free(t_data *data)
 {
 	t_pile		*tmp;
 	t_chunk		*tmp1;
-
 
 	tmp = data->pile_a;
 	while (data->pile_a)

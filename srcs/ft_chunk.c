@@ -6,7 +6,7 @@
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:44:00 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/15 17:03:19 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 17:33:46 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,5 @@ void	ft_chunk(t_data *data)
 	i = 0;
 	tab = ft_chunk2(data, &i);
 	add_nmb_c(data, tab, i);
-	free(tab);
+	//free(tab);
 }

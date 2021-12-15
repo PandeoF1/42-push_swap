@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-/*
+
 static void	ft_printchunk(t_data *data)
 {
 	t_chunk	*tmp;
@@ -31,8 +31,8 @@ static void	ft_printchunk(t_data *data)
 		tmp = tmp->next;
 	}
 	ft_printf("\n");
-}*/
-/*
+}
+
 static void	ft_printls(t_data *date)
 {
 	t_pile	*tmp;
@@ -95,7 +95,7 @@ static void	ft_printls(t_data *date)
 		ft_printf("  │\n");
 	}
 	ft_printf("└───────────┘\n");
-}*/
+}
 
 static int	*ft_maketab(t_data *data)
 {
@@ -192,7 +192,7 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			//ft_printls(data);
 		}
 		ft_chunk(data);
-		//ft_printchunk(data);
+		ft_printchunk(data);
 	}
 	free(sorted_tab);
 	//ft_swap2(data, x);
