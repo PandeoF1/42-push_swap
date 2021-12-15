@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:16:51 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/15 13:01:22 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 13:07:07 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_rra(t_data *data)
 	ft_printf("rra\n");
 }
 
-void	ft_rra(t_data *data)
+void	ft_rrb(t_data *data)
 {
 	int		x;
 	t_pile	*tmp;
