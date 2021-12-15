@@ -125,6 +125,7 @@ int	*ft_splittochar(char **str, int *y)
 
 char	*ft_argc_to_tab(char **argv, int argc, int *size)
 {
+	char	*tmp;
 	char	*str;
 	int		x;
 
@@ -132,8 +133,11 @@ char	*ft_argc_to_tab(char **argv, int argc, int *size)
 	str = ft_strdup(argv[1]);
 	while (x < argc && argv[x])
 	{
-		str = ft_strjoin(str, " ");
+		tmp = str;
+		free(str);
+		str = ft_strjoin(tmp, " ");
 		str = ft_strjoin(str, argv[x]);
+		free(tmp);
 		x++;
 	}
 	return (str);
@@ -162,6 +166,8 @@ int	ft_check_double(int *number, int size)
 
 int	main(int argc, char *argv[])
 {
+	char		*str;
+	char		**strr;
 	int			*number;
 	int			*sorted_tab;
 	int			size;
@@ -189,8 +195,6 @@ int	main(int argc, char *argv[])
 			ft_printf("Error : double numbers\n");
 			return (0);
 		}
-
-
 		sorted_tab = ft_sort_tab(number, size);
 //#################################je print juste mon tableau trié #####
 		ft_printf("sorted tab : ");
@@ -204,7 +208,10 @@ int	main(int argc, char *argv[])
 	}
 	else if (argc > 2 && ft_check_mult_arg(argv, argc) == 1)
 	{
-		number = ft_splittochar(ft_split(ft_argc_to_tab(argv, argc, &size), ' '), &size);
+		str = ft_argc_to_tab(argv, argc, &size);
+		strr = ft_split(str, ' ');
+
+		number = ft_splittochar(strr, &size);
 		ft_printf("size : %d\ntab : ", size);
 		while (x < size)
 			ft_printf("%d ", number[x++]);
@@ -216,24 +223,22 @@ int	main(int argc, char *argv[])
 		}
 
 		sorted_tab = ft_sort_tab(number, size);
-//#################################je print juste mon tableau trié #####
+		//#################################je print juste mon tableau trié #####
 		ft_printf("sorted tab : ");
 		x = 0;
 		while (x < size)
 			ft_printf("%d ", sorted_tab[x++]);
 		ft_printf("\n");
-//##################################FIN , t moche########################
+		
 		ft_swap(&data, number, size, sorted_tab);
+		free(str);
+		x = 0;
+		while (strr[x])
+			free(strr[x++]);
+		free(strr);
 		free(number);
-		// ton code ici
 	}
 	else
 		ft_usage();
-		//ft_push_swap(argv[1]);
-	//else if (argc > 2 && ft_check_args(argc, argv))
-		//ft_printf("gg");
-		//ft_push_swap(argc, argv);
-	//else
-	//	ft_usage();
 	return (0);
 }

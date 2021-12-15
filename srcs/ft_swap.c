@@ -44,6 +44,7 @@ static void	ft_printls(t_data *date)
 	int		b;
 	int		x;
 	int		y;
+	int		z;
 
 	a = 0;
 	b = 0;
@@ -80,12 +81,18 @@ static void	ft_printls(t_data *date)
 		b++;
 	while (x < a || y < b)
 	{
-		if (x < a && y < b)
-			ft_printf("│  %s  │  %s  │\n", split1[x++], split2[y++]);
-		else if (x < a)
-			ft_printf("│  %s  │  %s  │\n", split1[x++], " ");
-		else if (y < b)
-			ft_printf("│  %s  │  %s  │\n", " ", split2[y++]);
+		z = 0;
+		ft_printf("│  ");
+		if (x < a)
+			ft_printf("%s", split1[x++]);
+		else
+			ft_printf("x");
+		ft_printf("  │  ");
+		if (y < b)
+			ft_printf("%s", split2[y++]);
+		else
+			ft_printf("x");
+		ft_printf("  │\n");
 	}
 	ft_printf("└───────────┘\n");
 }
@@ -167,7 +174,11 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 				if (data->pile_a->i >= mid)
 					ft_ra(data);
 			}
+<<<<<<< HEAD
 		ft_printls(data);
+=======
+			ft_printls(data);
+>>>>>>> master
 		}
 		y += len_b;
 		free(sorted_tab);

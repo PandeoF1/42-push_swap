@@ -18,11 +18,16 @@
 # include <limits.h>
 # include <stdlib.h>
 
+typedef struct s_free
+{
+	void			*addr;
+	struct s_free	*next;
+}					t_free;
+
 typedef struct s_pile
 {
 	int				i;
 	struct s_pile	*next;
-	struct s_pile	*prev;
 }	t_pile;
 
 typedef struct s_chunk
@@ -57,5 +62,6 @@ void	ft_ra(t_data *data);
 void	ft_rb(t_data *data);
 void	ft_rra(t_data *data);
 void	ft_rrb(t_data *data);
+void	ft_free(t_free *data);
 
 #endif
