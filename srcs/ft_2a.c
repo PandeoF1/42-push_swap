@@ -6,7 +6,7 @@
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 09:31:08 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/15 09:36:07 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 13:48:29 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_2a(t_data *data)
 		temp_i = data->pile_a->i;
 		data->pile_a->i = data->pile_a->next->i;
 		data->pile_a->next->i = temp_i;
+		ft_printf("ra\n");
 	}
 	return ;
 }
