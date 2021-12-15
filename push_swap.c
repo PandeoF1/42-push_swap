@@ -157,6 +157,7 @@ char	*ft_argc_to_tab(char **argv, int argc)
 	while (x < argc)
 	{
 		ft_strcat(str, argv[x]);
+		ft_strcat(str, " ");
 		x++;
 	}
 	return (str);
