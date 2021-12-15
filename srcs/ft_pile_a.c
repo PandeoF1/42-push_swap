@@ -51,5 +51,4 @@ void	add_nmb_a(t_data *data, int nmb)
 	}
 	else
 		last_nmb_a(data->pile_a)->next = new;
-	free(new);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_chunk.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:44:00 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/15 16:10:53 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 17:03:19 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,10 @@ int	*ft_chunk2(t_data *data, int *i)
 void	ft_chunk(t_data *data)
 {
 	int		i;
+	int		*tab;
 
 	i = 0;
-	add_nmb_c(data, ft_chunk2(data, &i), i);
+	tab = ft_chunk2(data, &i);
+	add_nmb_c(data, tab, i);
+	free(tab);
 }

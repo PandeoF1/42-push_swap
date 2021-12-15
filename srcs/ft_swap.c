@@ -140,18 +140,18 @@ static int	ft_init(t_data *data, int *number, int size)
 	data->in_list = 0;
 	return (x);
 }
-/*
-void	ft_swap2(t_data *data, int x)
-{
-	int	y;
 
-	y = 0;
-	while (y < (x - 2))
-	{
+// void	ft_swap2(t_data *data, int x)
+// {
+// 	int	y;
+
+// 	y = 0;
+// 	while (y < (x - 2))
+// 	{
 		
-	}
-}
-*/
+// 	}
+// }
+
 void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 {
 	int				mid;
@@ -184,8 +184,7 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		}
 		y += len_b;
 		free(sorted_tab);
-		sorted_tab = ft_maketab(data);
-		sorted_tab = ft_sort_tab(sorted_tab, data->size_a);
+		sorted_tab = ft_sort_tab(ft_maketab(data), data->size_a);
 		if (data->size_a == 2)
 		{
 			if (data->pile_a->i > data->pile_a->next->i)

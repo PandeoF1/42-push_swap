@@ -249,8 +249,8 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", sorted_tab[x++]);
 		ft_printf("\n");
-		
 		ft_swap(&data, number, size, sorted_tab);
+		ft_free(&data);
 		free(str);
 		x = 0;
 		while (strr[x])
