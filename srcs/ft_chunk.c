@@ -6,7 +6,7 @@
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:44:00 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/15 12:27:54 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 13:19:52 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_chunk	*new_nmb_c(int *tab, int i)
 	new_c->tab = tab;
 	new_c->size = i;
 	new_c->next = NULL;
-	ft_printf("size here : %d\n", new_c->size);
 	return (new_c);
 }
 
@@ -87,18 +86,8 @@ int	*ft_chunk2(t_data *data, int *i)
 
 void	ft_chunk(t_data *data)
 {
-	int		*tab;
-	int		x;
 	int		i;
 
-	x = 0;
 	i = 0;
-	data->chunk->size = 0;
-	tab = ft_chunk2(data, &i);
-	while (x < 3)
-	{
-		ft_printf("tyuvbgvg : %d\n", tab[x]);
-		x++;
-	}
 	add_nmb_c(data, ft_chunk2(data, &i), i);
 }

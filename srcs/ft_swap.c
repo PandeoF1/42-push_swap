@@ -153,28 +153,23 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			if (data->pile_a->i < mid)
 			{
 				ft_pb(data);
-				ft_printls(data);
+				//ft_printls(data);
 				len_b++;
 			}
 			else if (data->last_a->i < mid)
 			{
-				ft_printf("rra\n");
-				ft_printls(data);
-				ft_printf("pb\n");
-				len_b++;
+				ft_rra(data);
+				//ft_printls(data);
+				//ft_pb(data);
+				//ft_printls(data);
+				//len_b++;
 			}
 			else
 			{
-				if (data->pile_a->i > mid)
+				if (data->pile_a->i >= mid)
 				{
 					ft_ra(data);
-					ft_printls(data);
-					if (data->pile_a->i < mid)
-					{
-						ft_pb(data);
-						ft_printls(data);
-						len_b++;
-					}
+					//ft_printls(data);
 				}
 			}
 		}
@@ -185,11 +180,11 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		if (data->size_a == 2)
 		{
 			ft_2a(data);
+			//ft_printls(data);
 			ft_pb(data);
 		}
-		ft_printls(data);
 		ft_chunk(data);
-		ft_printchunk(data);
+		//ft_printchunk(data);
 	}
 	return (0);
 }
