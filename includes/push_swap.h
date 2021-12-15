@@ -25,7 +25,6 @@ typedef struct s_pile
 	struct s_pile	*prev;
 }	t_pile;
 
-
 typedef struct s_data
 {
 	struct s_pile	*pile_a;
@@ -35,6 +34,7 @@ typedef struct s_data
 	struct s_pile	*temp;
 	int				size_a;
 	int				size_b;
+	int				size_tab;
 }	t_data;
 
 int		*ft_sort_tab(int *str, int size);
@@ -45,5 +45,6 @@ void	add_nmb_b(t_data *data, int nmb);
 void	ft_pa(t_data *data);
 void	ft_pb(t_data *data);
 void	ft_ra(t_data *data);
+void	ft_2a(t_data *data);
 
 #endif

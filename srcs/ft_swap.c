@@ -33,6 +33,34 @@ static void	ft_printls(t_data *date)
 	ft_printf("\nFin b.\n");
 }
 
+static int	*ft_maketab(t_data *date)
+{
+	t_pile	*tmp;
+	int		*tab;
+	int		i;
+
+	i = 0;
+	tmp = date->pile_a;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	date->size_tab = i;
+	tab = malloc(sizeof(int) * i);
+	if (!tab)
+		return (NULL);
+	tmp = date->pile_a;
+	i = 0;
+	while (tmp)
+	{
+		tab[i] = tmp->i;
+		tmp = tmp->next;
+		i++;
+	}
+	return (tab);
+}
+
 static int	ft_init(t_data *data, int *number, int size)
 {
 	int		x;
@@ -46,7 +74,6 @@ static int	ft_init(t_data *data, int *number, int size)
 	while (data->last_a->next)
 		data->last_a = data->last_a->next;
 	data->pile_b->next = NULL;
-	ft_printf("TEEEEEESSSSSSTTTTT : %d\n", data->pile_b->i);
 	return (x);
 }
 
@@ -68,10 +95,8 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		{
 			if (data->pile_a->i < mid)
 			{
-				// ft_printf("pb\n");
 				ft_pb(data);
 				ft_printls(data);
-				//ft_printf("pb_test%d\n", data->pile_b->i);
 				len_b++;
 			}
 			else if (data->last_a->i < mid)
@@ -95,9 +120,17 @@ int	*ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 					}
 				}
 			}
-			ft_printf("len : %d\n" , len_b);
 		}
 		y += len_b;
+		free(sorted_tab);
+		sorted_tab = ft_maketab(data);
+		sorted_tab = ft_sort_tab(sorted_tab, data->size_tab);
+		if (data->size_tab == 2)
+		{
+			ft_2a(data);
+			ft_pb(data);
+		}
+		ft_printls(data);
 	}
 	return (0);
 }
