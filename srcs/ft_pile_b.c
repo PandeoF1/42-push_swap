@@ -24,7 +24,6 @@ t_pile	*new_nmb_b(int nmb)
 	}
 	pile_b->i = nmb;
 	pile_b->next = NULL;
-	pile_b->prev = NULL;
 	return (pile_b);
 }
 
@@ -38,7 +37,6 @@ t_pile	*last_nmb_b(t_pile *list)
 	{
 		temp = list;
 		list = list->next;
-		list->prev = temp;
 	}
 	return (list);
 }

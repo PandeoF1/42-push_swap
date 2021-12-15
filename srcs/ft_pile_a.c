@@ -24,7 +24,6 @@ t_pile	*new_nmb_a(int nmb)
 	}
 	new_a->i = nmb;
 	new_a->next = NULL;
-	new_a->prev = NULL;
 	return (new_a);
 }
 
