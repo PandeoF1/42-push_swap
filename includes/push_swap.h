@@ -25,6 +25,12 @@ typedef struct s_pile
 	struct s_pile	*prev;
 }	t_pile;
 
+typedef struct s_chunk
+{
+	int				*tab;
+	struct s_chunk	*next;
+}	t_chunk;
+
 typedef struct s_data
 {
 	struct s_pile	*pile_a;
@@ -32,6 +38,7 @@ typedef struct s_data
 	struct s_pile	*last_a;
 	struct s_pile	*last_b;
 	struct s_pile	*temp;
+	struct s_chunk	*chunk;
 	int				size_a;
 	int				size_b;
 	int				size_tab;
