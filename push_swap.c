@@ -72,6 +72,8 @@ static int	ft_check_one_arg(char *str)
 	b = 0;
 	while (str[x])
 	{
+		if (str[x] == '-')
+			x++;
 		if (ft_isdigit(str[x]))
 		{
 			if (str[x] == '0')
