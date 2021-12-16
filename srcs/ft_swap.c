@@ -231,5 +231,5 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		//ft_printchunk(data);
 	}
 	free(sorted_tab);
-	ft_swap2(data, x);
+	//ft_swap2(data, x);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 13:15:12 by tnard             #+#    #+#              #
-#    Updated: 2021/12/15 17:30:30 by asaffroy         ###   ########lyon.fr    #
+#    Updated: 2021/12/16 13:09:46 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 

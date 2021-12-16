@@ -146,13 +146,11 @@ char	*ft_argc_to_tab(char **argv, int argc)
 
 	x = 1;
 	y = 0;
-	str = malloc(sizeof(char) * (ft_space_len(argv[1]) + 1));
 	while (x < argc)
-	{
-		y += ft_strlen(argv[x]);
-		x++;
-	}
-	str[y] = '\0';
+		y += ft_strlen(argv[x++]) + 1;
+	ft_printf("%d\n", y);
+	str = malloc(sizeof(char) * (y) + 1);
+	str[0] = '\0';
 	x = 1;
 	while (x < argc)
 	{
