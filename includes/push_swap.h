@@ -59,6 +59,7 @@ void	ft_chunk(t_data *data);
 
 void	ft_pa(t_data *data);
 void	ft_pb(t_data *data);
+void	ft_sb(t_data *data);
 void	ft_ra(t_data *data);
 void	ft_rb(t_data *data);
 void	ft_rra(t_data *data);

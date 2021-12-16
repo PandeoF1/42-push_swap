@@ -145,17 +145,48 @@ void	ft_swap2(t_data *data, int x)
 {
 	int		y;
 	t_chunk	*tmp;
+	t_chunk	*tmp1;
+	int		size;
 
-	tmp = malloc(sizeof(t_chunk));
+	size = data->size_b;
+	y = 0;
 	tmp = data->chunk;
+	tmp1 = data->chunk;
 	while (tmp->next)
+	{
+		y++;
 		tmp = tmp->next;
-	ft_printf("%d\n", tmp->tab[0]);
+	}
+	while (y-- - 1)
+		tmp1 = tmp1->next;
+	ft_printls(data);
+	ft_printchunk(data);
 	if (tmp->size == 1)
 		ft_pa(data);
+	else if (tmp->size == 2)
+	{
+		if (data->pile_b->i < data->pile_b->next->i)
+			ft_sb(data);
+		ft_pa(data);
+		ft_pa(data);
+	}
+	// else
+	// {
+	// 	if (data->pile_b->i < mid)
+	// 		{
+	// 			ft_pb(data);
+	// 			len_b++;
+	// 		}
+	// 		else if (data->last_b->i < mid)
+	// 			ft_rra(data);
+	// 		else
+	// 			if (data->pile_b->i >= mid)
+	// 				ft_ra(data);
+	// }
 	ft_printls(data);
-	free(data->chunk);
-	data->chunk = tmp;
+	free(tmp->tab);
+	free(tmp);
+	tmp1->next = NULL;
 	ft_printchunk(data);
 }
 
