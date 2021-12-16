@@ -141,16 +141,23 @@ static int	ft_init(t_data *data, int *number, int size)
 	return (x);
 }
 
-// void	ft_swap2(t_data *data, int x)
-// {
-// 	int	y;
+void	ft_swap2(t_data *data, int x)
+{
+	int		y;
+	t_chunk	*tmp;
 
-// 	y = 0;
-// 	while (y < (x - 2))
-// 	{
-		
-// 	}
-// }
+	tmp = malloc(sizeof(t_chunk));
+	tmp = data->chunk;
+	while (tmp->next)
+		tmp = tmp->next;
+	ft_printf("%d\n", tmp->tab[0]);
+	if (tmp->size == 1)
+		ft_pa(data);
+	ft_printls(data);
+	free(data->chunk);
+	data->chunk = tmp;
+	ft_printchunk(data);
+}
 
 void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 {
@@ -190,8 +197,8 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			//ft_printls(data);
 		}
 		ft_chunk(data);
-		ft_printchunk(data);
+		//ft_printchunk(data);
 	}
 	free(sorted_tab);
-	//ft_swap2(data, x);
+	ft_swap2(data, x);
 }
