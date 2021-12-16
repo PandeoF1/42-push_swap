@@ -26,6 +26,20 @@ static int	ft_int_len(int x)
 	return (y);
 }
 
+static int	ft_is_sorted(int *number, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		if (number[i] > number[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 static void	ft_usage(void)
 {
 	ft_printf("usage: ./push_swap [numbers]\n");
@@ -239,7 +253,11 @@ int	main(int argc, char *argv[])
 			ft_printf("Error : double numbers\n");
 			return (0);
 		}
-
+		if (ft_is_sorted(number, size) == 1)
+		{
+			ft_printf("Error : sorted\n");
+			return (0);
+		}
 		sorted_tab = ft_sort_tab(number, size);
 		//#################################je print juste mon tableau trié #####
 		ft_printf("sorted tab : ");
@@ -248,13 +266,13 @@ int	main(int argc, char *argv[])
 			ft_printf("%d ", sorted_tab[x++]);
 		ft_printf("\n");
 		ft_swap(&data, number, size, sorted_tab);
-		//ft_free(&data);
+		ft_free(&data);
 		free(str);
 		x = 0;
 		while (strr[x])
 			free(strr[x++]);
 		free(strr);
-		free(number);
+		//free(number);
 	}
 	else
 		ft_usage();

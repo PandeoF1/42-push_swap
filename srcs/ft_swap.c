@@ -159,8 +159,8 @@ void	ft_swap2(t_data *data, int x)
 	}
 	while (y-- - 1)
 		tmp1 = tmp1->next;
-	ft_printls(data);
-	ft_printchunk(data);
+	//ft_printls(data);
+	//ft_printchunk(data);
 	if (tmp->size == 1)
 		ft_pa(data);
 	else if (tmp->size == 2)
@@ -183,11 +183,11 @@ void	ft_swap2(t_data *data, int x)
 	// 			if (data->pile_b->i >= mid)
 	// 				ft_ra(data);
 	// }
-	ft_printls(data);
+	//ft_printls(data);
 	free(tmp->tab);
 	free(tmp);
 	tmp1->next = NULL;
-	ft_printchunk(data);
+	//ft_printchunk(data);
 }
 
 void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
@@ -231,5 +231,5 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		//ft_printchunk(data);
 	}
 	free(sorted_tab);
-	//ft_swap2(data, x);
+	ft_swap2(data, x);
 }
