@@ -196,19 +196,23 @@ int	ft_check_double(int *number, int size)
 	return (1);
 }
 
-void	ft_update(t_data *data, int **number, int size)
+int    *ft_update(t_data *data, int size)
 {
 	t_pile	*tmp;
+	int		*number;
 	int		x;
 
 	x = 0;
+	number = malloc(sizeof(int) * (size));
 	tmp = data->pile_a;
-	while (tmp)
+	while (x < size)
 	{
-		(*number[x]) = tmp->i;
+		//ft_printf("mh : %d\n", tmp->i);
+		(number[x]) = tmp->i;
+		ft_printf("mh : %d\n", number[x]);
 		tmp = tmp->next;
+		x++;
 	}
-
 }
 
 int	main(int argc, char *argv[])
@@ -281,8 +285,8 @@ int	main(int argc, char *argv[])
 		ft_printf("\n");
 		while (ft_is_sorted(number, size) == 0)
 		{
+			number = ft_update(&data, size); //leaks
 			ft_swap(&data, number, size, sorted_tab);
-			ft_update(&data, &number, size);
 		}
 		ft_free(&data);
 		free(str);
