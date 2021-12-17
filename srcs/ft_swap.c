@@ -138,7 +138,7 @@ static int	ft_init(t_data *data, int *number, int size)
 		data->last_a = data->last_a->next;
 	data->pile_b->next = NULL;
 	data->in_list = 0;
-	data->nb_mov = 0;
+	data->len_chunk = 0;
 	return (x);
 }
 
@@ -151,25 +151,7 @@ void	ft_swap2(t_data *data, int x)
 	int		*sorted_tab;
 
 	size = data->size_b;
-<<<<<<< HEAD
 	while (data->size_b > 0)
-=======
-	y = 0;
-	tmp = data->chunk;
-	tmp1 = data->chunk;
-	while (tmp->next)
-	{
-		y++;
-		tmp = tmp->next;
-	}
-	while (y-- - 1)
-		tmp1 = tmp1->next;
-	//ft_printls(data);
-	//ft_printchunk(data);
-	if (tmp->size == 1)
-		ft_pa(data);
-	else if (tmp->size == 2)
->>>>>>> master
 	{
 		y = 0;
 		tmp = data->chunk;
@@ -183,32 +165,29 @@ void	ft_swap2(t_data *data, int x)
 			tmp1 = tmp1->next;
 		sorted_tab = ft_sort_tab(tmp->tab, tmp->size);
 		y = sorted_tab[tmp->size / 2];
-		// ft_printls(data);
-		// ft_printchunk(data);
+		data->len_chunk = tmp->size;
 		while (tmp->size > 0)
 		{
 			if (tmp->size == 1)
 			{
-				while (data->nb_ra > 0)
-				{
-					ft_rra(data);
-					data->nb_ra--;
-				}
 				ft_pa(data);
 				tmp->size--;
 			}
 			else if (tmp->size == 2)
 			{
-				while (data->nb_ra > 0)
-				{
-					ft_rra(data);
-					data->nb_ra--;
-				}
 				if (data->pile_b->i < data->pile_b->next->i)
 					ft_sb(data);
 				ft_pa(data);
 				ft_pa(data);
 				tmp->size -= 2;
+			}
+			else if (data->len_chunk == 0)
+			{
+				while (data->nb_ra > 0)
+				{
+					ft_rra(data);
+					data->nb_ra--;
+				}
 			}
 			else
 			{
@@ -216,11 +195,12 @@ void	ft_swap2(t_data *data, int x)
 				{
 					ft_pb(data);
 					tmp->size--;
+					data->len_chunk--;
 				}
 				else if (data->pile_b->i < y)
 				{
 					ft_ra(data);
-					//tmp->size--;
+					data->len_chunk--;
 					data->nb_ra++;
 				}
 			}
@@ -231,27 +211,6 @@ void	ft_swap2(t_data *data, int x)
 		tmp1->next = NULL;
 		ft_printchunk(data);
 	}
-<<<<<<< HEAD
-=======
-	// else
-	// {
-	// 	if (data->pile_b->i < mid)
-	// 		{
-	// 			ft_pb(data);
-	// 			len_b++;
-	// 		}
-	// 		else if (data->last_b->i < mid)
-	// 			ft_rra(data);
-	// 		else
-	// 			if (data->pile_b->i >= mid)
-	// 				ft_ra(data);
-	// }
-	//ft_printls(data);
-	free(tmp->tab);
-	free(tmp);
-	tmp1->next = NULL;
-	//ft_printchunk(data);
->>>>>>> master
 }
 
 void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)

@@ -6,11 +6,7 @@
 #    By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 13:15:12 by tnard             #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2021/12/16 13:49:43 by asaffroy         ###   ########lyon.fr    #
-=======
-#    Updated: 2021/12/16 16:10:33 by tnard            ###   ########lyon.fr    #
->>>>>>> master
+#    Updated: 2021/12/17 10:03:35 by asaffroy         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,4 +55,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re maker
