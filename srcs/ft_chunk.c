@@ -6,7 +6,7 @@
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:44:00 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/17 13:08:47 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/17 15:37:07 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,17 @@ t_chunk	*last_nmb_c(t_chunk *list)
 
 void	add_nmb_c(t_data *data, int	*tab, int i)
 {
-	static int		a = 0;
 	t_chunk			*new;
 
 	new = new_nmb_c(tab, i);
 	if (new == NULL)
 		return ;
-	if (a == 0)
+	if (data->a == 0)
 	{
+		ft_printf("juehcue3hcje3bcub\n");
+		ft_printf("juehcue3hcje3bcub\n");
 		data->chunk = new;
-		a++;
+		data->a++;
 	}
 	else
 		last_nmb_c(data->chunk)->next = new;

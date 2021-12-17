@@ -217,6 +217,7 @@ void	ft_swap2(t_data *data, int x)
 		//free(tmp->tab);
 		tmp1->next = NULL;
 		data->nb_chunk--;
+		data->nb_ra = 0;
 		if (data->nb_chunk != 0)
 		{
 			ft_printls(data);
@@ -236,6 +237,8 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		x = ft_init(data, number, size);
 	data->in_list = 0;
 	data->len_chunk = 0;
+	data->nb_chunk = 0;
+	data->a = 0;
 	y = 0;
 	while (y < (x - 2))
 	{
@@ -254,7 +257,7 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			else
 				if (data->pile_a->i >= mid)
 					ft_ra(data);
-			//ft_printls(data);
+			ft_printls(data);
 		}
 		y += len_b;
 		free(sorted_tab);
@@ -263,7 +266,7 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		{
 			if (data->pile_a->i > data->pile_a->next->i)
 				ft_ra(data);
-			//ft_printls(data);
+			ft_printls(data);
 		}
 		ft_chunk(data);
 		ft_printchunk(data);

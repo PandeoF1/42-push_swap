@@ -52,6 +52,7 @@ typedef struct s_data
 	int				len_chunk;
 	int				nb_pa;
 	int				nb_ra;
+	int				a;
 }	t_data;
 
 int		*ft_sort_tab(int *str, int size);
