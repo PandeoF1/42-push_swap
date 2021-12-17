@@ -215,7 +215,7 @@ void	ft_swap2(t_data *data, int x)
 				}
 			}
 		}
-		free(tmp);
+		//free(tmp);
 		//free(tmp->tab);
 		tmp1->next = NULL;
 		data->nb_chunk--;

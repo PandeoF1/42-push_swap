@@ -257,7 +257,6 @@ int	main(int argc, char *argv[])
 	{
 		str = ft_argc_to_tab(argv, argc);
 		strr = ft_split(str, ' ');
-
 		number = ft_splittochar(strr, &size);
 		ft_printf("size : %d\ntab : ", size);
 		while (x < size)
