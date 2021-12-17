@@ -202,7 +202,7 @@ int	main(int argc, char *argv[])
 	char		**strr;
 	int			*number;
 	int			*sorted_tab;
-	int			size;
+	int			size = 10;
 	int			x;
 	t_data		data;
 	t_pile		pile_a;

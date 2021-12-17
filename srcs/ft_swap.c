@@ -217,10 +217,14 @@ void	ft_swap2(t_data *data, int x)
 			}
 		}
 		//ft_printls(data);
+<<<<<<< Updated upstream
 		//free(tmp->tab);
+=======
+		free(tmp->tab);
+>>>>>>> Stashed changes
 		free(tmp);
 		tmp1->next = NULL;
-		ft_printchunk(data);
+		//ft_printchunk(data);
 	}
 }
 
@@ -265,5 +269,5 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 		ft_printchunk(data);
 	}
 	free(sorted_tab);
-	ft_swap2(data, x);
+	//ft_swap2(data, x);
 }
