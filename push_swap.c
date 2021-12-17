@@ -283,6 +283,7 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", sorted_tab[x++]);
 		ft_printf("\n");
+		ft_swap(&data, number, size, sorted_tab);
 		while (ft_is_sorted(number, size) == 0)
 		{
 			number = ft_update(&data, size); //leaks
