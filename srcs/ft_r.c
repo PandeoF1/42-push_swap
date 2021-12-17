@@ -6,7 +6,7 @@
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:16:51 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/15 13:46:41 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/17 12:16:33 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_rrb(t_data *data)
 	t_pile	*tmp;
 
 	x = 0;
-	while (x < data->size_a - 1)
+	while (x < data->size_b - 1)
 	{
 		tmp = data->pile_b->next;
 		data->last_b->next = data->pile_b;
