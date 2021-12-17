@@ -137,8 +137,6 @@ static int	ft_init(t_data *data, int *number, int size)
 	while (data->last_a->next)
 		data->last_a = data->last_a->next;
 	data->pile_b->next = NULL;
-	data->in_list = 0;
-	data->len_chunk = 0;
 	data->nb_chunk = 0;
 	return (x);
 }
@@ -230,11 +228,14 @@ void	ft_swap2(t_data *data, int x)
 void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 {
 	int				mid;
-	int				x;
+	static int		x = 0;
 	int				len_b;
 	int				y;
 
-	x = ft_init(data, number, size);
+	if (data->size_a == -1)
+		x = ft_init(data, number, size);
+	data->in_list = 0;
+	data->len_chunk = 0;
 	y = 0;
 	while (y < (x - 2))
 	{

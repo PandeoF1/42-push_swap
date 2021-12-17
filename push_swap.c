@@ -231,6 +231,7 @@ int	main(int argc, char *argv[])
 	data.pile_a = &pile_a;
 	data.pile_b = &pile_b;
 	data.chunk = &chunk;
+	data.size_a = -1;
 	x = 0;
 	size = 0;
 	if (argc == 2 && ft_strlen(argv[1]) && ft_check_one_arg(argv[1]) != 1
