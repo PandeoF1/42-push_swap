@@ -205,7 +205,7 @@ void	ft_update(t_data *data, int **number, int size)
 	tmp = data->pile_a;
 	while (tmp)
 	{
-		number[x] = tmp->i;
+		(*number[x]) = tmp->i;
 		tmp = tmp->next;
 	}
 
