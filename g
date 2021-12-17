@@ -69,57 +69,15 @@ rb
 pa
 rb
 rrb
-pile: 7
-rrb
 pile: 20
 rrb
-pile: 3
-rrb
 pile: 18
-yguh
-size : 0
-rb
-rb
-rb
-rb
-rrb
-pile: 4
-rrb
-pile: 16
-rrb
-pile: 6
-rrb
-pile: 12
-yguh
-size : 0
-rb
-rb
-rb
-rb
-rrb
-pile: 8
-rrb
-pile: 13
-rrb
-pile: 2
-rrb
-pile: 14
-yguh
-size : 0
-rb
-rb
-rb
-rb
 rrb
 pile: 19
 rrb
-pile: 1
-rrb
 pile: 21
-rrb
-pile: 17
 yguh
-size : 0
+size : 24
 rb
 rb
 rb
@@ -127,178 +85,10 @@ rb
 rrb
 pile: 20
 rrb
-pile: 3
-rrb
 pile: 18
-rrb
-pile: 9
-yguh
-size : 0
-rb
-rb
-rb
-rb
-rrb
-pile: 16
-rrb
-pile: 6
-rrb
-pile: 12
-rrb
-pile: 7
-yguh
-size : 0
-rb
-rb
-rb
-rb
-rrb
-pile: 13
-rrb
-pile: 2
-rrb
-pile: 14
-rrb
-pile: 4
-yguh
-size : 0
-rb
-rb
-rb
-rb
-rrb
-pile: 1
-rrb
-pile: 21
-rrb
-pile: 17
-rrb
-pile: 8
-yguh
-size : 0
-rb
-rb
-rb
-rb
-rrb
-pile: 3
-rrb
-pile: 18
-rrb
-pile: 9
-rrb
-pile: 19
-yguh
-size : 0
-rb
-rb
-rb
-rb
-rrb
-pile: 6
-rrb
-pile: 12
-rrb
-pile: 7
-rrb
-pile: 20
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 2
-rrb
-pile: 14
-rrb
-pile: 4
-rrb
-pile: 16
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 21
-rrb
-pile: 17
-rrb
-pile: 8
-rrb
-pile: 13
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 18
-rrb
-pile: 9
 rrb
 pile: 19
 rrb
-pile: 1
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 12
-rrb
-pile: 7
-rrb
-pile: 20
-rrb
-pile: 3
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 14
-rrb
-pile: 4
-rrb
-pile: 16
-rrb
-pile: 6
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 17
-rrb
-pile: 8
-rrb
-pile: 13
-rrb
-pile: 2
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 9
-rrb
-pile: 19
-rrb
-pile: 1
-rrb
 pile: 21
 yguh
 size : 24
@@ -307,115 +97,298 @@ rb
 rb
 rb
 rrb
-pile: 7
-rrb
 pile: 20
-rrb
-pile: 3
-rrb
-pile: 18
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 4
-rrb
-pile: 16
-rrb
-pile: 6
-rrb
-pile: 12
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 8
-rrb
-pile: 13
-rrb
-pile: 2
-rrb
-pile: 14
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 19
-rrb
-pile: 1
-rrb
-pile: 21
-rrb
-pile: 17
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 20
-rrb
-pile: 3
 rrb
 pile: 18
 rrb
-pile: 9
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 16
-rrb
-pile: 6
-rrb
-pile: 12
-rrb
-pile: 7
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 13
-rrb
-pile: 2
-rrb
-pile: 14
-rrb
-pile: 4
-yguh
-size : 24
-rb
-rb
-rb
-rb
-rrb
-pile: 1
+pile: 19
 rrb
 pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
 rrb
-pile: 17
+pile: 20
 rrb
-pile: 8
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
+yguh
+size : 24
+rb
+rb
+rb
+rb
+rrb
+pile: 20
+rrb
+pile: 18
+rrb
+pile: 19
+rrb
+pile: 21
 yguh
 size : 0
 pa
 pa
+sb
 pa
 pa
 Chunk (13): 12 16 14 13 17 1 9 3 7 6 4 2 8 
