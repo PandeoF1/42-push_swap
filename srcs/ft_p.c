@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_p.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:13:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/15 16:10:18 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/17 12:09:42 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_pa(t_data *data)
 		tmp->i = data->pile_b->i;
 		data->pile_a = tmp;
 		data->pile_a->next = NULL;
-		tmp = data->pile_a;
+		tmp = data->pile_b;
 		data->pile_b = data->pile_b->next;
 		data->last_a = data->pile_a;
 	}

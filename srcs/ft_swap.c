@@ -147,10 +147,9 @@ void	ft_swap2(t_data *data, int x)
 	int		y;
 	t_chunk	*tmp;
 	t_chunk	*tmp1;
-	int		size;
+	int		i;
 	int		*sorted_tab;
 
-	size = data->size_b;
 	while (data->size_b > 0)
 	{
 		y = 0;
@@ -166,8 +165,10 @@ void	ft_swap2(t_data *data, int x)
 		sorted_tab = ft_sort_tab(tmp->tab, tmp->size);
 		y = sorted_tab[tmp->size / 2];
 		data->len_chunk = tmp->size;
+		data->nb_ra = 0;
 		while (tmp->size > 0)
 		{
+			i = 0;
 			if (tmp->size == 1)
 			{
 				ft_pa(data);
@@ -185,28 +186,38 @@ void	ft_swap2(t_data *data, int x)
 			{
 				while (data->nb_ra > 0)
 				{
-					ft_rra(data);
+					ft_rrb(data);
+					ft_printf("pile: %d\n", data->pile_b->i);
 					data->nb_ra--;
 				}
+				data->in_list = data->size_b - data->len_chunk;
+				//free(tmp->tab);
+				ft_printf("yguh\n");
+				tmp->tab = ft_chunk2(data, &i);
+				free(sorted_tab);
+				sorted_tab = ft_sort_tab(tmp->tab, tmp->size);
+				y = sorted_tab[tmp->size / 2];
+				data->len_chunk = tmp->size;
+				ft_printf("size : %d\n", tmp->tab[0]);
 			}
 			else
 			{
 				if (data->pile_b->i > y)
 				{
-					ft_pb(data);
+					ft_pa(data);
 					tmp->size--;
 					data->len_chunk--;
 				}
-				else if (data->pile_b->i < y)
+				else if (data->pile_b->i <= y)
 				{
-					ft_ra(data);
+					ft_rb(data);
 					data->len_chunk--;
 					data->nb_ra++;
 				}
 			}
 		}
-		ft_printls(data);
-		free(tmp->tab);
+		//ft_printls(data);
+		//free(tmp->tab);
 		free(tmp);
 		tmp1->next = NULL;
 		ft_printchunk(data);
@@ -251,7 +262,7 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			//ft_printls(data);
 		}
 		ft_chunk(data);
-		//ft_printchunk(data);
+		ft_printchunk(data);
 	}
 	free(sorted_tab);
 	ft_swap2(data, x);
