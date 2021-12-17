@@ -196,6 +196,21 @@ int	ft_check_double(int *number, int size)
 	return (1);
 }
 
+void	ft_update(t_data *data, int **number, int size)
+{
+	t_pile	*tmp;
+	int		x;
+
+	x = 0;
+	tmp = data->pile_a;
+	while (tmp)
+	{
+		number[x] = tmp->i;
+		tmp = tmp->next;
+	}
+
+}
+
 int	main(int argc, char *argv[])
 {
 	char		*str;
@@ -265,7 +280,11 @@ int	main(int argc, char *argv[])
 		while (x < size)
 			ft_printf("%d ", sorted_tab[x++]);
 		ft_printf("\n");
-		ft_swap(&data, number, size, sorted_tab);
+		while (ft_is_sorted(number, size) == 0)
+		{
+			ft_swap(&data, number, size, sorted_tab);
+			ft_update(&data, &number, size);
+		}
 		ft_free(&data);
 		free(str);
 		x = 0;
