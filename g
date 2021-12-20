@@ -1,220 +1,240 @@
+ra
+ra
+ra
+pb
+pb
+ra
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+pb
+ra
+pb
+ra
+pb
+pb
+ra
+ra
+ra
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+pb
+pb
+ra
+pb
+ra
+pb
+pb
+pb
+pb
+ra
+pb
+ra
+pb
+pb
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+pb
 rra
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  0  │  -273274656  │
-│  6  │  x  │
-│  8  │  x  │
-│  2  │  x  │
-│  7  │  x  │
-│  3  │  x  │
-│  1  │  x  │
-│  5  │  x  │
-│  44  │  x  │
-└───────────┘
 pb
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  6  │  0  │
-│  8  │  x  │
-│  2  │  x  │
-│  7  │  x  │
-│  3  │  x  │
-│  1  │  x  │
-│  5  │  x  │
-│  4  │  x  │
-└───────────┘
 ra
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  8  │  0  │
-│  2  │  x  │
-│  7  │  x  │
-│  3  │  x  │
-│  1  │  x  │
-│  5  │  x  │
-│  4  │  x  │
-│  6  │  x  │
-└───────────┘
 ra
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  2  │  0  │
-│  7  │  x  │
-│  3  │  x  │
-│  1  │  x  │
-│  5  │  x  │
-│  4  │  x  │
-│  6  │  x  │
-│  8  │  x  │
-└───────────┘
 pb
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  7  │  2  │
-│  3  │  0  │
-│  1  │  x  │
-│  5  │  x  │
-│  4  │  x  │
-│  6  │  x  │
-│  8  │  x  │
-└───────────┘
 ra
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  3  │  2  │
-│  1  │  0  │
-│  5  │  x  │
-│  4  │  x  │
-│  6  │  x  │
-│  8  │  x  │
-│  7  │  x  │
-└───────────┘
-pb
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  1  │  3  │
-│  5  │  2  │
-│  4  │  0  │
-│  6  │  x  │
-│  8  │  x  │
-│  7  │  x  │
-└───────────┘
-pb
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  5  │  1  │
-│  4  │  3  │
-│  6  │  2  │
-│  8  │  0  │
-│  7  │  x  │
-└───────────┘
-Chunk (4): 1 3 2 0 
-
-pb
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  4  │  5  │
-│  6  │  1  │
-│  8  │  3  │
-│  7  │  2  │
-│  x  │  0  │
-└───────────┘
-pb
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  6  │  4  │
-│  8  │  5  │
-│  7  │  1  │
-│  x  │  3  │
-│  x  │  2  │
-│  x  │  0  │
-└───────────┘
-Chunk (4): 1 3 2 0 
-Chunk (2): 4 5 
-
-pb
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  8  │  6  │
-│  7  │  4  │
-│  x  │  5  │
-│  x  │  1  │
-│  x  │  3  │
-│  x  │  2  │
-│  x  │  0  │
-└───────────┘
 ra
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  7  │  6  │
-│  8  │  4  │
-│  x  │  5  │
-│  x  │  1  │
-│  x  │  3  │
-│  x  │  2  │
-│  x  │  0  │
-└───────────┘
-Chunk (4): 1 3 2 0 
-Chunk (2): 4 5 
-Chunk (1): 6 
-
-6ayayay1
+pb
+pb
+pb
+ra
+ra
+pb
+ra
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+pb
+pb
+pb
+pb
+pb
+rra
+pb
+rra
+pb
+ra
+ra
+ra
+pb
+ra
+ra
+pb
+pb
+ra
+pb
+ra
+ra
+pb
+ra
+pb
+pb
 pa
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  6  │  4  │
-│  7  │  5  │
-│  8  │  1  │
-│  x  │  3  │
-│  x  │  2  │
-│  x  │  0  │
-└───────────┘
-Chunk (4): 1 3 2 0 
-Chunk (2): 4 5 
-
+pa
+rb
+rb
+pa
+rrb
+rrb
+pa
+pa
+rb
+rb
+rb
+pa
+rb
+pa
+rrb
+rrb
+rrb
+rrb
+sb
+pa
+sb
+pa
 sb
 pa
 pa
-
-     TAB
-┌───────────┐
-│  A  │  B  │
-│     │     │
-│  4  │  1  │
-│  5  │  3  │
-│  6  │  2  │
-│  7  │  0  │
-│  8  │  x  │
-└───────────┘
-Chunk (4): 1 3 2 0 
-
+rb
+rb
+rb
+rb
+pa
+sb
+pa
+pa
 rb
 pa
 rb
 rb
-here
+pa
+pa
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+rrb
+pa
+sb
+pa
+sb
+pa
+sb
+pa
+sb
+pa
+sb
+pa
+pa
+rb
+rb
 rb
 pa
 rb
-1ayayay2
+rb
+pa
+sb
 pa
 pa
+rb
+sb
+pa
+pa
+rb
+sb
+pa
+sb
+pa
+pa
+rb
+rb
+rb
+pa
+rb
+rb
+pa
+pa
+rb
+rb
+pa
+sb
+pa
+sb
+pa
+sb
+pa
+pa
+rb
+rb
+rb
+rb
+pa
+rb
+rb
+rb
+pa
+rb
+pa
+rb
+rb
+pa
+rb
+pa
+rb
+rb
+pa
+pa
+pa
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb
+pb

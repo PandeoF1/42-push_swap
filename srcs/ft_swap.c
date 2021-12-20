@@ -170,12 +170,15 @@ void	ft_swap2(t_data *data, int x)
 			data->in_list = data->size_b - tmp->size;
 			tmp->tab = ft_chunk2(data, &i);
 			i = 0;
-			if (ft_is_rev_sorted(tmp->tab, tmp->size) == 1)
+			if (ft_is_rev_sorted(tmp->tab, tmp->size) == 1 && data->nb_rb == 0)
 			{
 				while (i < tmp->size)
 				{
 					ft_pa(data);
 					tmp->size--;
+					data->in_list = data->size_b - tmp->size;
+					tmp->tab = ft_chunk2(data, &i);
+					i = 0;
 				}
 			}
 			else if (tmp->size == 1 && data->nb_rb == 0)
