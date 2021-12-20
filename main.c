@@ -54,6 +54,28 @@ int	ft_is_rev_sorted(int *number, int size)
 	return (1);
 }
 
+int	ft_sorted_in_a(t_data *data, int size)
+{
+	int	*tab;
+	int	i;
+	int	*number;
+
+	number = ft_update(data, size);
+	tab = ft_sort_tab(number, size);
+	number = ft_update(data, size);
+	i = 0;
+	size--;
+	if (number[size] == tab[size])
+	{
+		while (size > 0 && number[size] == tab[size])
+		{
+			i++;
+			size--;
+		}
+	}
+	return (i);
+}
+
 static void	ft_usage(void)
 {
 	ft_printf("usage: ./push_swap [numbers]\n");
@@ -218,6 +240,8 @@ int	*ft_update(t_data *data, int size)
 
 	x = 0;
 	number = malloc(sizeof(int) * (size));
+	if (!number)
+		return (NULL);
 	tmp = data->pile_a;
 	while (x < size)
 	{
@@ -298,7 +322,7 @@ int	main(int argc, char *argv[])
 		// ft_printf("size : %d\ntab : ", size);
 		// while (x < size)
 		// 	ft_printf("%d ", number[x++]);
-		//ft_printf("\n");
+		// ft_printf("\n");
 		if (ft_check_double(number, size) == 0)
 		{
 			ft_printf("Error : double numbers\n");

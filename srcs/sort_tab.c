@@ -36,6 +36,5 @@ int	*ft_sort_tab(int *str, int size)
 		}
 		i++;
 	}
-	free(str);
 	return (tab);
 }

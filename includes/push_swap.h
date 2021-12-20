@@ -63,10 +63,13 @@ void	ft_chunk(t_data *data);
 int		*ft_chunk2(t_data *data, int *i);
 int		ft_is_sorted(int *number, int size);
 int		ft_is_rev_sorted(int *number, int size);
+int		ft_sorted_in_a(t_data *data, int size);
+int		*ft_update(t_data *data, int size);
 
 void	ft_pa(t_data *data);
 void	ft_pb(t_data *data);
 void	ft_sb(t_data *data);
+void	ft_sa(t_data *data);
 void	ft_ra(t_data *data);
 void	ft_rb(t_data *data);
 void	ft_rra(t_data *data);
