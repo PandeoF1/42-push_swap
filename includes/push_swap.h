@@ -51,7 +51,7 @@ typedef struct s_data
 	int				nb_chunk;
 	int				len_chunk;
 	int				nb_pa;
-	int				nb_ra;
+	int				nb_rb;
 	int				a;
 }	t_data;
 
@@ -61,6 +61,8 @@ void	add_nmb_a(t_data *data, int nmb);
 void	add_nmb_b(t_data *data, int nmb);
 void	ft_chunk(t_data *data);
 int		*ft_chunk2(t_data *data, int *i);
+int		ft_is_sorted(int *number, int size);
+int		ft_is_rev_sorted(int *number, int size);
 
 void	ft_pa(t_data *data);
 void	ft_pb(t_data *data);

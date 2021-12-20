@@ -6,7 +6,7 @@
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 10:44:00 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/17 15:37:07 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 09:53:49 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ void	add_nmb_c(t_data *data, int	*tab, int i)
 		return ;
 	if (data->a == 0)
 	{
-		ft_printf("juehcue3hcje3bcub\n");
-		ft_printf("juehcue3hcje3bcub\n");
 		data->chunk = new;
 		data->a++;
 	}

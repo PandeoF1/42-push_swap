@@ -26,7 +26,7 @@ static int	ft_int_len(int x)
 	return (y);
 }
 
-static int	ft_is_sorted(int *number, int size)
+int	ft_is_sorted(int *number, int size)
 {
 	int	i;
 
@@ -34,6 +34,20 @@ static int	ft_is_sorted(int *number, int size)
 	while (i < size - 1)
 	{
 		if (number[i] > number[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_is_rev_sorted(int *number, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		if (number[i] < number[i + 1])
 			return (0);
 		i++;
 	}
@@ -162,7 +176,7 @@ char	*ft_argc_to_tab(char **argv, int argc)
 	y = 0;
 	while (x < argc)
 		y += ft_strlen(argv[x++]) + 1;
-	ft_printf("%d\n", y);
+	//ft_printf("%d\n", y);
 	str = malloc(sizeof(char) * (y) + 1);
 	str[0] = '\0';
 	x = 1;
@@ -196,7 +210,7 @@ int	ft_check_double(int *number, int size)
 	return (1);
 }
 
-int    *ft_update(t_data *data, int size)
+int	*ft_update(t_data *data, int size)
 {
 	t_pile	*tmp;
 	int		*number;
@@ -209,10 +223,11 @@ int    *ft_update(t_data *data, int size)
 	{
 		//ft_printf("mh : %d\n", tmp->i);
 		(number[x]) = tmp->i;
-		ft_printf("mh : %d\n", number[x]);
+		//ft_printf("mh : %d\n", number[x]);
 		tmp = tmp->next;
 		x++;
 	}
+	return (number);
 }
 
 int	main(int argc, char *argv[])
@@ -238,35 +253,52 @@ int	main(int argc, char *argv[])
 		&& ft_check_one_arg(argv[1]) != 0)
 	{
 		number = ft_splittochar(ft_split(argv[1], ' '), &size);
-		ft_printf("size : %d\ntab : ", size);
-		while (x < size)
-			ft_printf("%d ", number[x++]);
-		ft_printf("\n");
+		// ft_printf("size : %d\ntab : ", size);
+		// while (x < size)
+		// 	ft_printf("%d ", number[x++]);
+		// ft_printf("\n");
 		if (ft_check_double(number, size) == 0)
 		{
 			ft_printf("Error : double numbers\n");
 			return (0);
 		}
+		if (ft_is_sorted(number, size) == 1)
+		{
+			ft_printf("Error : sorted\n");
+			return (0);
+		}
 		sorted_tab = ft_sort_tab(number, size);
 //#################################je print juste mon tableau trié #####
-		ft_printf("sorted tab : ");
-		x = 0;
-		while (x < size)
-			ft_printf("%d ", sorted_tab[x++]);
-		ft_printf("\n");
+		// ft_printf("sorted tab : ");
+		// x = 0;
+		// while (x < size)
+		// 	ft_printf("%d ", sorted_tab[x++]);
+		// ft_printf("\n");
 //##################################FIN , t moche########################
 		ft_swap(&data, number, size, sorted_tab);
+		number = ft_update(&data, size);//leaks
+		while (ft_is_sorted(number, size) == 0)
+		{
+			ft_swap(&data, number, size, sorted_tab);
+			number = ft_update(&data, size); //leaks
+		}
+		ft_free(&data);
 		free(number);
+		x = 0;
+		while (strr[x])
+			free(strr[x++]);
+		free(strr);
+		//free(number);
 	}
 	else if (argc > 2 && ft_check_mult_arg(argv, argc) == 1)
 	{
 		str = ft_argc_to_tab(argv, argc);
 		strr = ft_split(str, ' ');
 		number = ft_splittochar(strr, &size);
-		ft_printf("size : %d\ntab : ", size);
-		while (x < size)
-			ft_printf("%d ", number[x++]);
-		ft_printf("\n");
+		// ft_printf("size : %d\ntab : ", size);
+		// while (x < size)
+		// 	ft_printf("%d ", number[x++]);
+		//ft_printf("\n");
 		if (ft_check_double(number, size) == 0)
 		{
 			ft_printf("Error : double numbers\n");
@@ -279,16 +311,18 @@ int	main(int argc, char *argv[])
 		}
 		sorted_tab = ft_sort_tab(number, size);
 		//#################################je print juste mon tableau trié #####
-		ft_printf("sorted tab : ");
-		x = 0;
-		while (x < size)
-			ft_printf("%d ", sorted_tab[x++]);
-		ft_printf("\n");
+		// ft_printf("sorted tab : ");
+		// x = 0;
+		// while (x < size)
+		// 	ft_printf("%d ", sorted_tab[x++]);
+		// ft_printf("\n");
 		ft_swap(&data, number, size, sorted_tab);
+		number = ft_update(&data, size);//leaks
 		while (ft_is_sorted(number, size) == 0)
 		{
-			number = ft_update(&data, size); //leaks
+			sorted_tab = ft_sort_tab(number, size);
 			ft_swap(&data, number, size, sorted_tab);
+			number = ft_update(&data, size); //leaks
 		}
 		ft_free(&data);
 		free(str);

@@ -148,7 +148,6 @@ void	ft_swap2(t_data *data, int x)
 	t_chunk	*tmp1;
 	int		i;
 	int		*sorted_tab;
-
 	while (data->size_b > 0)
 	{
 		y = 0;
@@ -165,16 +164,24 @@ void	ft_swap2(t_data *data, int x)
 		sorted_tab = ft_sort_tab(tmp->tab, tmp->size);
 		y = sorted_tab[tmp->size / 2];
 		data->len_chunk = tmp->size;
-		data->nb_ra = 0;
+		data->nb_rb = 0;
 		while (tmp->size > 0)
 		{
 			i = 0;
-			if (tmp->size == 1)
+			if (ft_is_rev_sorted(tmp->tab, tmp->size) == 1)
+			{
+				while (i < tmp->size)
+				{
+					ft_pa(data);
+					tmp->size--;
+				}
+			}
+			else if (tmp->size == 1 && data->nb_rb == 0)
 			{
 				ft_pa(data);
 				tmp->size--;
 			}
-			else if (tmp->size == 2)
+			else if (tmp->size == 2 && data->nb_rb == 0)
 			{
 				if (data->pile_b->i < data->pile_b->next->i)
 					ft_sb(data);
@@ -184,11 +191,12 @@ void	ft_swap2(t_data *data, int x)
 			}
 			else if (data->len_chunk == 0)
 			{
-				while (data->nb_ra > 0)
+				ft_printf("here\n");
+				while (data->nb_rb > 0)
 				{
 					if (data->nb_chunk != 1)
 						ft_rrb(data);
-					data->nb_ra--;
+					data->nb_rb--;
 				}
 				data->in_list = data->size_b - tmp->size;
 				tmp->tab = ft_chunk2(data, &i);
@@ -201,15 +209,29 @@ void	ft_swap2(t_data *data, int x)
 			{
 				if (data->pile_b->i > y)
 				{
-					ft_pa(data);
-					tmp->size--;
-					data->len_chunk--;
+					//ft_printf("hein\n");
+					if (data->pile_b->next->i > data->pile_b->i)
+					{
+						while (data->pile_b->next->i > data->pile_b->i)
+						{
+							ft_sb(data);
+							ft_pa(data);
+							tmp->size--;
+							data->len_chunk--;
+						}
+					}
+					else
+					{
+						ft_pa(data);
+						tmp->size--;
+						data->len_chunk--;
+					}
 				}
 				else if (data->pile_b->i <= y)
 				{
 					ft_rb(data);
 					data->len_chunk--;
-					data->nb_ra++;
+					data->nb_rb++;
 				}
 			}
 		}
@@ -217,7 +239,6 @@ void	ft_swap2(t_data *data, int x)
 		//free(tmp->tab);
 		tmp1->next = NULL;
 		data->nb_chunk--;
-		data->nb_ra = 0;
 		if (data->nb_chunk != 0)
 		{
 			ft_printls(data);

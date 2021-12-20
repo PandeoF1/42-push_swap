@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 16:05:12 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/16 14:12:24 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/20 09:31:08 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_free(t_data *data)
 	{
 		tmp1 = data->chunk;
 		data->chunk = data->chunk->next;
-		free(tmp1->tab);
+		//free(tmp1->tab);
 		free(tmp1);
 	}
 }
