@@ -167,6 +167,10 @@ void	ft_swap2(t_data *data, int x)
 		data->nb_rb = 0;
 		while (tmp->size > 0)
 		{
+			// ft_printf("mama\n");
+			// ft_printf("size :%d\n", tmp->size);
+			// ft_printf("tab : %d\n", tmp->tab[0]);
+			i = 0;
 			data->in_list = data->size_b - tmp->size;
 			tmp->tab = ft_chunk2(data, &i);
 			i = 0;
@@ -175,6 +179,8 @@ void	ft_swap2(t_data *data, int x)
 				while (i < tmp->size)
 				{
 					ft_pa(data);
+					if (data->pile_a->i > data->pile_a->next->i)
+						ft_sa(data);
 					tmp->size--;
 					data->in_list = data->size_b - tmp->size;
 					tmp->tab = ft_chunk2(data, &i);
@@ -202,6 +208,8 @@ void	ft_swap2(t_data *data, int x)
 						ft_rrb(data);
 					data->nb_rb--;
 				}
+				data->in_list = data->size_b - tmp->size;
+				tmp->tab = ft_chunk2(data, &i);
 				free(sorted_tab);
 				sorted_tab = ft_sort_tab(tmp->tab, tmp->size);
 				y = sorted_tab[tmp->size / 2];
@@ -211,7 +219,6 @@ void	ft_swap2(t_data *data, int x)
 			{
 				if (data->pile_b->i > y)
 				{
-					//ft_printf("hein\n");
 					if (data->pile_b->next->i > data->pile_b->i)
 					{
 						while (data->pile_b->next->i > data->pile_b->i)
@@ -219,7 +226,12 @@ void	ft_swap2(t_data *data, int x)
 							ft_sb(data);
 							ft_pa(data);
 							if (data->pile_a->i > data->pile_a->next->i)
-								ft_sa(data);
+							{
+								if (data->pile_b->next->i > data->pile_b->i)
+									ft_ss(data);
+								else
+									ft_sa(data);
+							}
 							tmp->size--;
 							data->len_chunk--;
 						}
@@ -228,7 +240,7 @@ void	ft_swap2(t_data *data, int x)
 					{
 						ft_pa(data);
 						if (data->pile_a->i > data->pile_a->next->i)
-								ft_sa(data);
+							ft_sa(data);
 						tmp->size--;
 						data->len_chunk--;
 					}
@@ -298,10 +310,22 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 					}
 				}
 				else if (data->last_a->i < mid)
-					ft_rra(data);
+				{
+					if (data->size_b >= 2 && data->pile_b->i < data->last_b->i)
+						ft_rrr(data);
+					else
+						ft_rra(data);
+				}
 				else
+				{
 					if (data->pile_a->i >= mid)
-						ft_ra(data);
+					{
+						if (data->size_b >= 2 && data->pile_b->i < data->last_b->i)
+							ft_rr(data);
+						else
+							ft_ra(data);
+					}
+				}
 				//ft_printls(data);
 				y = ft_sorted_in_a(data, data->size_a);//
 			}

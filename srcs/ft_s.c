@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_s.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:03:44 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/15 17:14:41 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/21 11:18:02 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,28 @@ void	ft_sb(t_data *data)
 	ft_printf("sb\n");
 }
 
-void	ft_ss(t_data *data_a, t_data *data_b)
+void	ft_ss(t_data *data)
 {
-	ft_sa(data_a);
-	ft_sb(data_b);
+	int		tmp;
+	int		tmp3;
+	t_pile	*tmp2;
+	t_pile	*tmp4;
+
+	if (data->size_a > 1)
+	{
+		tmp2 = data->pile_a;
+		tmp2 = tmp2->next;
+		tmp = data->pile_a->i;
+		data->pile_a->i = tmp2->i;
+		tmp2->i = tmp;
+	}
+	if (data->size_b > 1)
+	{
+		tmp4 = data->pile_b;
+		tmp4 = tmp4->next;
+		tmp3 = data->pile_b->i;
+		data->pile_b->i = tmp4->i;
+		tmp4->i = tmp3;
+	}
+	ft_printf("ss\n");
 }
