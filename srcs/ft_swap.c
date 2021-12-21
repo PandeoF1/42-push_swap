@@ -269,41 +269,47 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 	data->a = 0;
 	y = 0;
 	y += ft_sorted_in_a(data, size);
-	j = size;
-	while (y < (x - 2))
+	j = 0;
+	while (y < data->size_a)
 	{
 		len_b = 0;
+		//y = 0;//
 		size = data->size_a / 2;
 		mid = sorted_tab[size];
 		while (len_b < size)
 		{
-			if (data->pile_a->i < mid)
-			{
-				if (data->pile_a->i > data->pile_a->next->i)
+			if (y != data->size_a)
+			{		
+				if (data->pile_a->i < mid)
 				{
-					while (data->pile_a->i > data->pile_a->next->i)
+					if (data->pile_a->i > data->pile_a->next->i)
 					{
-						ft_sa(data);
+						while (data->pile_a->i > data->pile_a->next->i)
+						{
+							ft_sa(data);
+							ft_pb(data);
+							len_b++;
+						}
+					}
+					else
+					{
 						ft_pb(data);
 						len_b++;
-						y = ft_sorted_in_a(data, (data->size_a));
 					}
 				}
+				else if (data->last_a->i < mid)
+					ft_rra(data);
 				else
-				{
-					ft_pb(data);
-					len_b++;
-					y = ft_sorted_in_a(data, (data->size_a));
-				}
+					if (data->pile_a->i >= mid)
+						ft_ra(data);
+				//ft_printls(data);
+				y = ft_sorted_in_a(data, data->size_a);//
 			}
-			else if (data->last_a->i < mid)
-				ft_rra(data);
 			else
-				if (data->pile_a->i >= mid)
-					ft_ra(data);
-			//ft_printls(data);
+				len_b++;
 		}
-		y += len_b;
+		j = len_b;//
+		//y += len_b;//
 		free(sorted_tab);
 		sorted_tab = ft_sort_tab(ft_maketab(data), data->size_a);
 		if (data->size_a == 2)
@@ -312,6 +318,7 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 				ft_ra(data);
 			//ft_printls(data);
 		}
+		y = ft_sorted_in_a(data, data->size_a);//
 		ft_chunk(data);
 		//ft_printchunk(data);
 	}

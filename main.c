@@ -67,7 +67,7 @@ int	ft_sorted_in_a(t_data *data, int size)
 	size--;
 	if (number[size] == tab[size])
 	{
-		while (size > 0 && number[size] == tab[size])
+		while (size >= 0 && number[size] == tab[size])
 		{
 			i++;
 			size--;
