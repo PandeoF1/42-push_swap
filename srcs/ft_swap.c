@@ -242,8 +242,6 @@ void	ft_swap2(t_data *data, int x)
 								while (data->nb_ra > 0)
 								{
 									ft_pa(data);
-									if (data->pile_a->next && (data->pile_a->i > data->pile_a->next->i))
-										ft_sa(data);
 									data->nb_ra--;
 								}
 							}
@@ -308,6 +306,7 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 	data->in_list = 0;
 	data->len_chunk = 0;
 	data->nb_chunk = 0;
+	data->nb_rb = 0;
 	data->a = 0;
 	y = 0;
 	y += ft_sorted_in_a(data, size);
@@ -367,8 +366,7 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 			else
 				len_b++;
 		}
-		j = len_b;//
-		//y += len_b;//
+		j = len_b;
 		free(sorted_tab);
 		sorted_tab = ft_sort_tab(ft_maketab(data), data->size_a);
 		if (data->size_a == 2)
