@@ -52,6 +52,8 @@ typedef struct s_data
 	int				len_chunk;
 	int				nb_pa;
 	int				nb_rb;
+	int				nb_rb2;
+	int				nb_ra;
 	int				a;
 }	t_data;
 

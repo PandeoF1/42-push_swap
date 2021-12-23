@@ -165,6 +165,8 @@ void	ft_swap2(t_data *data, int x)
 		y = sorted_tab[tmp->size / 2];
 		data->len_chunk = tmp->size;
 		data->nb_rb = 0;
+		data->nb_ra = 0;
+		data->nb_rb2 = 0;
 		while (tmp->size > 0)
 		{
 			// ft_printf("mama\n");
@@ -182,8 +184,8 @@ void	ft_swap2(t_data *data, int x)
 					if (data->pile_a->i > data->pile_a->next->i)
 						ft_sa(data);
 					tmp->size--;
-					data->in_list = data->size_b - tmp->size;
-					tmp->tab = ft_chunk2(data, &i);
+					// data->in_list = data->size_b - tmp->size;
+					// tmp->tab = ft_chunk2(data, &i);
 					i = 0;
 				}
 			}
@@ -225,12 +227,44 @@ void	ft_swap2(t_data *data, int x)
 						{
 							ft_sb(data);
 							ft_pa(data);
-							if (data->pile_a->i > data->pile_a->next->i)
+							while (data->pile_a->i > data->pile_a->next->i)
 							{
 								if (data->pile_b->next->i > data->pile_b->i)
 									ft_ss(data);
 								else
 									ft_sa(data);
+								while (data->pile_a->next->next && (data->pile_a->next->next->i < data->pile_a->next->i))
+								{
+									if (data->pile_b->next->next && (data->pile_b->next->next->i > data->pile_b->next->i))
+									{
+										ft_rr(data);
+										ft_ss(data);
+										data->nb_ra++;
+										data->nb_rb2++;
+									}
+									else
+									{
+										ft_ra(data);
+										ft_sa(data);
+										data->nb_ra++;
+									}
+								}
+								while (data->nb_ra > 0)
+								{
+									if (data->nb_rb2 > 0)
+									{
+										ft_rrr(data);
+										data->nb_rb2--;
+									}
+									else
+										ft_rra(data);
+									data->nb_ra--;
+								}
+								while (data->nb_rb2 > 0)
+								{
+									ft_rrb(data);
+									data->nb_rb2--;
+								}
 							}
 							tmp->size--;
 							data->len_chunk--;
@@ -241,6 +275,38 @@ void	ft_swap2(t_data *data, int x)
 						ft_pa(data);
 						if (data->pile_a->i > data->pile_a->next->i)
 							ft_sa(data);
+						while (data->pile_a->next->next && (data->pile_a->next->next->i < data->pile_a->next->i))
+						{
+							if (data->pile_b->next->next && (data->pile_b->next->next->i > data->pile_b->next->i))
+							{
+								ft_rr(data);
+								ft_ss(data);
+								data->nb_ra++;
+								data->nb_rb2++;
+							}
+							else
+							{
+								ft_ra(data);
+								ft_sa(data);
+								data->nb_ra++;
+							}
+						}
+						while (data->nb_ra > 0)
+						{
+							if (data->nb_rb2 > 0)
+							{
+								ft_rrr(data);
+								data->nb_rb2--;
+							}
+							else
+								ft_rra(data);
+							data->nb_ra--;
+						}
+						while (data->nb_rb2 > 0)
+						{
+							ft_rrb(data);
+							data->nb_rb2--;
+						}
 						tmp->size--;
 						data->len_chunk--;
 					}
@@ -298,13 +364,18 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 					{
 						while (data->pile_a->i > data->pile_a->next->i)
 						{
-							ft_sa(data);
+							if (data->pile_b->next && data->pile_b->i < data->pile_b->next->i)
+								ft_ss(data);
+							else
+								ft_sa(data);
 							ft_pb(data);
 							len_b++;
 						}
 					}
 					else
 					{
+						if (data->pile_b->next && data->pile_b->i < data->pile_b->next->i)
+							ft_sb(data);
 						ft_pb(data);
 						len_b++;
 					}
@@ -349,3 +420,8 @@ void	ft_swap(t_data *data, int *number, int size, int *sorted_tab)
 	free(sorted_tab);
 	ft_swap2(data, x);
 }
+
+//if size_b plus grand < size_a qui arrive -> met plus petit de B en haut et pose le A dessus
+//if size_a qui arrive < un des B -> trouve le B le plus grand le plus proche et met le plus petit au dessus
+
+//push minimum ou maxi en haut ou bas en fonction de plus rapide
