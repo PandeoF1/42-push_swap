@@ -6,7 +6,7 @@
 /*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:16:51 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/24 10:04:24 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/24 14:52:33 by asaffroy         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,23 +99,4 @@ void	ft_rrr(t_data *data)
 		x++;
 	}
 	ft_printf("rrr\n");
-}
-
-void	ft_rr(t_data *data)
-{
-	t_pile	*tmp;
-	t_pile	*tmp2;
-
-	tmp = data->pile_a->next;
-	data->last_a->next = data->pile_a;
-	data->last_a->next->next = NULL;
-	data->pile_a = tmp;
-	data->last_a = data->last_a->next;
-
-	tmp2 = data->pile_b->next;
-	data->last_b->next = data->pile_b;
-	data->last_b->next->next = NULL;
-	data->pile_b = tmp2;
-	data->last_b = data->last_b->next;
-	ft_printf("rr\n");
 }

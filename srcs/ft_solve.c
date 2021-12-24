@@ -12,8 +12,8 @@
 
 #include "../includes/push_swap.h"
 
-static void		solve_2(t_data *data)
+static void	solve_2(t_data *data)
 {
 	if (data->pile_a->i > data->pile_a->next->i)
-		ft_sa(frame);
+		ft_sa(data);
 }
