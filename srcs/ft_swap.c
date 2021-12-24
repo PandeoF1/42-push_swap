@@ -33,7 +33,7 @@ static void	ft_printchunk(t_data *data)
 	ft_printf("\n");
 }
 
-static void	ft_printls(t_data *date)
+void	ft_printls(t_data *date)
 {
 	t_pile	*tmp;
 	char	*str1;

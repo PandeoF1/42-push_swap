@@ -31,7 +31,7 @@ int	ft_is_sorted(int *number, int size)
 	int	i;
 
 	i = 0;
-	while (i < size - 1)
+	while (i < size - 2)
 	{
 		if (number[i] > number[i + 1])
 			return (0);
@@ -243,12 +243,12 @@ int	*ft_update(t_data *data, int size)
 	if (!number)
 		return (NULL);
 	tmp = data->pile_a;
-	while (x < size)
+	while (x < size - 1)
 	{
 		//ft_printf("mh : %d\n", tmp->i);
 		(number[x]) = tmp->i;
-		//ft_printf("mh : %d\n", number[x]);
 		tmp = tmp->next;
+		//ft_printf("mh : %d\n", tmp->i);
 		x++;
 	}
 	return (number);
@@ -299,6 +299,7 @@ int	main(int argc, char *argv[])
 		// 	ft_printf("%d ", sorted_tab[x++]);
 		// ft_printf("\n");
 //##################################FIN , t moche########################
+		data.max = sorted_tab[size - 1];
 		ft_swap(&data, number, size, sorted_tab);
 		number = ft_update(&data, size);//leaks
 		while (ft_is_sorted(number, size) == 0)
@@ -334,18 +335,21 @@ int	main(int argc, char *argv[])
 			return (0);
 		}
 		sorted_tab = ft_sort_tab(number, size);
+		data.max = sorted_tab[size - 1];
 		//#################################je print juste mon tableau trié #####
 		// ft_printf("sorted tab : ");
 		// x = 0;
 		// while (x < size)
 		// 	ft_printf("%d ", sorted_tab[x++]);
 		// ft_printf("\n");
-		ft_swap(&data, number, size, sorted_tab);
+		// ft_swap(&data, number, size, sorted_tab);
+		ft_swap_radix(&data, sorted_tab, size, number);
 		number = ft_update(&data, size);//leaks
 		while (ft_is_sorted(number, size) == 0)
 		{
-			sorted_tab = ft_sort_tab(number, size);
-			ft_swap(&data, number, size, sorted_tab);
+			//ft_printf("heho : %d\n", number[0]);
+			ft_swap_radix(&data, sorted_tab, size, number);
+			//ft_swap(&data, number, size, sorted_tab);
 			number = ft_update(&data, size); //leaks
 		}
 		ft_free(&data);
