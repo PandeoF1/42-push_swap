@@ -80,9 +80,9 @@ void	ft_main(int argc, char *argv[], t_main main)
 		ft_free_main(&main, 0);
 		return ;
 	}
-	if (main.size <= 8)
-		ft_sort(argc, argv, &main, &data);
-	else
+	//if (main.size <= 8)
+	//	ft_sort(argc, argv, &main, &data);
+	//else
 		ft_sort_main(argc, argv, &main, &data);
 	ft_free(&data);
 	ft_free_main(&main, main.a);
