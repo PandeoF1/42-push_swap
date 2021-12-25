@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_radix.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 17:08:43 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/24 14:49:15 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/25 14:56:24 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ static void	ft_convert(t_data *data, int *tab)
 {
 	t_pile		*temp;
 	int			i;
+	char		*str1;
+	char		*str;
 
 	temp = data->pile_a;
 	while (temp)
@@ -94,15 +96,17 @@ static void	ft_convert(t_data *data, int *tab)
 		i = 0;
 		while (temp->i != tab[i])
 			i++;
+		str = ft_itoa(i);
+		str1 = ft_convert_base(str, "0123456789", "0123");
 		if (temp->i == data->max)
 		{
-			temp->i
-				= ft_atoi(ft_convert_base(ft_itoa(i), "0123456789", "0123"));
+			temp->i = ft_atoi(str1);
 			data->max = temp->i;
 		}
 		else
-			temp->i
-				= ft_atoi(ft_convert_base(ft_itoa(i), "0123456789", "0123"));
+			temp->i = ft_atoi(str1);
+		free(str);
+		free(str1);
 		temp = temp->next;
 	}
 }

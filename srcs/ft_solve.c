@@ -12,8 +12,16 @@
 
 #include "../includes/push_swap.h"
 
+void	ft_sort(int argc, char *argv[], t_main *main, t_data *data)
+{
+	ft_printf("%d", main->size);
+	return ;
+}
+
+/*
 static void	solve_2(t_data *data)
 {
 	if (data->pile_a->i > data->pile_a->next->i)
 		ft_sa(data);
 }
+*/

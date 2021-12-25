@@ -30,6 +30,16 @@ typedef struct s_pile
 	struct s_pile	*next;
 }	t_pile;
 
+typedef struct s_main
+{
+	char		*str;
+	char		**strr;
+	int			*number;
+	int			*sorted_tab;
+	int			size;
+	int			a;
+}	t_main;
+
 typedef struct s_chunk
 {
 	int				*tab;
@@ -66,6 +76,7 @@ int			*ft_update(t_data *data, int size);
 int			i_base(char c, char *base);
 int			is_base(char c, char *base);
 int			check_base(char *base);
+int			ft_first_sort(char **data);
 void		ft_rev_tab(char *tab, int size);
 long int	ft_atoi_base(char *str, char *base);
 long int	ft_fill_tab(char *tab, long int num, char *base_to);
@@ -76,6 +87,7 @@ int			ft_is_in2(t_data *data, int d, int k);
 int			ft_check_double(int *number, int size);
 int			ft_int_len(int x);
 void		ft_usage(void);
+void		ft_sort(int argc, char *argv[], t_main *main, t_data *data);
 int			ft_space_len(char *str);
 int			*ft_splittochar(char **str, int *y);
 int			ft_check_one_arg(char *str);

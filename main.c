@@ -12,14 +12,56 @@
 
 #include "includes/push_swap.h"
 
-int	main(int argc, char *argv[])
+int	ft_free_main(t_main *main, int a)
 {
-	char		*str;
-	char		**strr;
-	int			*number;
-	int			*sorted_tab;
-	int			size = 10;
-	int			x;
+	free(main->number);
+	if (a != 2)
+		free(main->str);
+	if (a == 1 || a == 2)
+		free(main->sorted_tab);
+	main->size = 0;
+	while (main->strr[main->size])
+		free(main->strr[main->size++]);
+	free(main->strr);
+	return (0);
+}
+
+int	ft_main_min(int argc, char *argv[], t_main *main, t_data *data)
+{
+	data->size_a = -1;
+	main->size = 0;
+	if (argc == 2 && ft_strlen(argv[1]) && ft_check_one_arg(argv[1]) != 1
+		&& ft_check_one_arg(argv[1]) != 0)
+	{
+		main->strr = ft_split(argv[1], ' ');
+		main->a++;
+	}
+	else if (argc > 2 && ft_check_mult_arg(argv, argc) == 1)
+	{
+		main->str = ft_argc_to_tab(argv, argc);
+		main->strr = ft_split(main->str, ' ');
+	}
+	else
+		return (1);
+	return (0);
+}
+
+void	ft_sort_main(int argc, char *argv[], t_main *main, t_data *data)
+{
+	main->sorted_tab = ft_sort_tab(main->number, main->size);
+	data->max = main->sorted_tab[main->size - 1];
+	ft_swap_radix(&(*data), main->sorted_tab, main->size, main->number);
+	free(main->number);
+	main->number = ft_update(&(*data), main->size);
+	while (ft_is_sorted(main->number, main->size) == 0)
+	{
+		ft_swap_radix(&(*data), main->sorted_tab, main->size, main->number);
+		main->number = ft_update(&(*data), main->size);
+	}
+}
+
+void	ft_main(int argc, char *argv[], t_main main)
+{
 	t_data		data;
 	t_pile		pile_a;
 	t_pile		pile_b;
@@ -28,69 +70,29 @@ int	main(int argc, char *argv[])
 	data.pile_a = &pile_a;
 	data.pile_b = &pile_b;
 	data.chunk = &chunk;
-	data.size_a = -1;
-	x = 0;
-	size = 0;
-	if (argc == 2 && ft_strlen(argv[1]) && ft_check_one_arg(argv[1]) != 1
-		&& ft_check_one_arg(argv[1]) != 0)
-	{
-		number = ft_splittochar(ft_split(argv[1], ' '), &size);
-		if (ft_check_double(number, size) == 0)
-		{
-			ft_printf("Error : double numbers\n");
-			return (0);
-		}
-		if (ft_is_sorted(number, size) == 1)
-		{
-			ft_printf("Error : sorted\n");
-			return (0);
-		}
-		sorted_tab = ft_sort_tab(number, size);
-		data.max = sorted_tab[size - 1];
-		ft_swap_radix(&data, sorted_tab, size, number);
-		number = ft_update(&data, size);//leaks
-		while (ft_is_sorted(number, size) == 0)
-		{
-			ft_swap_radix(&data, sorted_tab, size, number);
-			number = ft_update(&data, size); //leaks
-		}
-		ft_free(&data);
-		free(sorted_tab);
-		free(number);
-	}
-	else if (argc > 2 && ft_check_mult_arg(argv, argc) == 1)
-	{
-		str = ft_argc_to_tab(argv, argc);
-		strr = ft_split(str, ' ');
-		number = ft_splittochar(strr, &size);
-		if (ft_check_double(number, size) == 0)
-		{
-			ft_printf("Error : double numbers\n");
-			return (0);
-		}
-		if (ft_is_sorted(number, size) == 1)
-		{
-			ft_printf("Error : sorted\n");
-			return (0);
-		}
-		sorted_tab = ft_sort_tab(number, size);
-		data.max = sorted_tab[size - 1];
-		ft_swap_radix(&data, sorted_tab, size, number);
-		number = ft_update(&data, size);//leaks
-		while (ft_is_sorted(number, size) == 0)
-		{
-			ft_swap_radix(&data, sorted_tab, size, number);
-			number = ft_update(&data, size); //leaks
-		}
-		ft_free(&data);
-		free(str);
-		free(sorted_tab);
-		x = 0;
-		while (strr[x])
-			free(strr[x++]);
-		free(strr);
-	}
-	else
+	if (ft_main_min(argc, argv, &main, &data))
 		ft_usage();
+	main.number = ft_splittochar(main.strr, &main.size);
+	if (ft_check_double(main.number, main.size) == 0
+		|| ft_first_sort(main.strr) == 1)
+	{
+		ft_printf("Error : double numbers or already sorted\n");
+		ft_free_main(&main, 0);
+		return ;
+	}
+	if (main.size <= 8)
+		ft_sort(argc, argv, &main, &data);
+	else
+		ft_sort_main(argc, argv, &main, &data);
+	ft_free(&data);
+	ft_free_main(&main, main.a);
+}
+
+int	main(int argc, char *argv[])
+{
+	t_main		main;
+
+	main.a = 1;
+	ft_main(argc, argv, main);
 	return (0);
 }

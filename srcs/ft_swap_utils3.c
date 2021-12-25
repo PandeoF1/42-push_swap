@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_utils3.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 15:32:57 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/24 15:33:55 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/25 15:37:27 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,19 @@ int	*ft_update(t_data *data, int size)
 		x++;
 	}
 	return (number);
+}
+
+int	ft_first_sort(char **data)
+{
+	int	x;
+	int	z;
+
+	x = 0;
+	z = -1;
+	while (data[x])
+		x++;
+	while (++z < x - 1)
+		if (ft_atoi(data[z]) > ft_atoi(data[z + 1]))
+			return (0);
+	return (1);
 }
