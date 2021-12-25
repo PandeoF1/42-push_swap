@@ -6,7 +6,7 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 13:15:12 by tnard             #+#    #+#              #
-#    Updated: 2021/12/25 15:55:58 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/12/25 18:59:06 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,9 @@ $(NAME): $(OBJECTS_PREFIXED) maker
 all: $(NAME)
 
 maker:
-	@make -C libft bonus
 	@make -C ft_printf
+	@make -C libft bonus
+	@sleep 0.1
 
 clean:
 	@make clean -C libft
