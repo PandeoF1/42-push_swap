@@ -15,7 +15,7 @@
 int	ft_free_main(t_main *main, int a)
 {
 	free(main->number);
-	if (a != 2)
+	if (a == 1)
 		free(main->str);
 	if (a == 1 || a == 2)
 		free(main->sorted_tab);
