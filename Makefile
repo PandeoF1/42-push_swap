@@ -6,7 +6,7 @@
 #    By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/09 13:15:12 by tnard             #+#    #+#              #
-#    Updated: 2021/12/25 18:59:06 by tnard            ###   ########lyon.fr    #
+#    Updated: 2021/12/26 03:21:12 by tnard            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJS_DIR	= objs/
 OBJS		= $(SRCS:.c=.o)
 OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 CC			= gcc
-CC_FLAGS	= #-fsanitize=address#-Wall -Werror -Wextra
+CC_FLAGS	= -Wall -Werror -Wextra#-fsanitize=address#-Wall -Werror -Wextra
 
 $(OBJS_DIR)%.o : %.c includes/push_swap.h
 	@mkdir -p $(OBJS_DIR)

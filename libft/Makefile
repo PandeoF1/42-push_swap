@@ -33,7 +33,7 @@ OBJECTS_OTHER_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSO))
 
 CC = gcc
 
-CC_FLAGS = #-Wall -Wextra -Werror
+CC_FLAGS = -Wall -Wextra -Werror
 
 $(OBJS_DIR)%.o : %.c libft.h
 	@mkdir -p $(OBJS_DIR)

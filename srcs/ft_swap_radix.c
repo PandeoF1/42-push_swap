@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 17:08:43 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/26 01:22:35 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 03:24:12 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ void	ft_swap_radix(t_data *data, int *tab, int size, int *number)
 	int			len_max;
 	static int	x = 0;
 
+	len_max = 0;
 	d = 1;
 	if (x == 0)
 		ft_init(data, number, size);

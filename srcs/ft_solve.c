@@ -89,7 +89,7 @@ static void	solve_5(t_data *data, int size)
 		ft_pa(&(*data));
 }
 
-void	ft_sort(int argc, char *argv[], t_main *main, t_data *data)
+void	ft_sort(t_main *main, t_data *data)
 {
 	ft_init(data, main->number, main->size);
 	main->a = 0;

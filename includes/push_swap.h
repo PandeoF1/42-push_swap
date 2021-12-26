@@ -87,7 +87,7 @@ int			ft_is_in2(t_data *data, int d, int k);
 int			ft_check_double(int *number, int size);
 int			ft_int_len(int x);
 void		ft_usage(void);
-void		ft_sort(int argc, char *argv[], t_main *main, t_data *data);
+void		ft_sort(t_main *main, t_data *data);
 int			ft_space_len(char *str);
 int			*ft_splittochar(char **str, int *y);
 int			ft_check_one_arg(char *str);

@@ -46,7 +46,7 @@ int	ft_main_min(int argc, char *argv[], t_main *main, t_data *data)
 	return (0);
 }
 
-void	ft_sort_main(int argc, char *argv[], t_main *main, t_data *data)
+void	ft_sort_main(t_main *main, t_data *data)
 {
 	main->sorted_tab = ft_sort_tab(main->number, main->size);
 	data->max = main->sorted_tab[main->size - 1];
@@ -81,9 +81,9 @@ void	ft_main(int argc, char *argv[], t_main main)
 		return ;
 	}
 	if (main.size <= 5)
-		ft_sort(argc, argv, &main, &data);
+		ft_sort(&main, &data);
 	else
-		ft_sort_main(argc, argv, &main, &data);
+		ft_sort_main(&main, &data);
 	ft_free(&data, main.a);
 	ft_free_main(&main, main.a);
 }

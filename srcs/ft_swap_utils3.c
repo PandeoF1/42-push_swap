@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 15:32:57 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/26 01:08:20 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 03:23:18 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,8 @@ int	ft_check_one_arg(char *str)
 int	ft_check_mult_arg(char **argv, int argc)
 {
 	int	x;
-	int	b;
 
 	x = 1;
-	b = 0;
 	while (x < argc)
 	{
 		if (ft_check_one_arg(argv[x]) == 0)

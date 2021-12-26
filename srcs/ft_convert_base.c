@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 08:58:17 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/24 08:36:38 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 03:27:39 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	check_base(char *base)
 	{
 		j = i + 1;
 		if (base[i] == '-' || base[i] == '+' || base[i] < 32
-			|| base[i] > 127 || base[i] == ' ')
+			|| base[i] >= 126 || base[i] == ' ')
 			return (0);
 		while (base[j])
 		{
