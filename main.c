@@ -12,8 +12,9 @@
 
 #include "includes/push_swap.h"
 
-int	ft_free_main(t_main *main, int a)
+int	ft_fmain(t_main *main, int a)
 {
+	ft_printf("%d", main->a);
 	free(main->number);
 	if (a == 11 || a == 1)
 		free(main->str);
@@ -76,8 +77,8 @@ void	ft_main(int argc, char *argv[], t_main main)
 	if (ft_check_double(main.number, main.size) == 0
 		|| ft_first_sort(main.strr) == 1)
 	{
-		ft_printf("Error : double numbers or already sorted\n");
-		ft_free_main(&main, 0);
+		main.a = main.a + 11 - 1;
+		ft_printf("Error : double numbers or sorted\n", ft_fmain(&main, main.a));
 		return ;
 	}
 	if (main.size <= 5)
@@ -86,7 +87,7 @@ void	ft_main(int argc, char *argv[], t_main main)
 		ft_sort_main(&main, &data);
 	ft_pb_(&data);
 	ft_free(&data, main.a);
-	ft_free_main(&main, main.a);
+	ft_fmain(&main, main.a);
 }
 
 int	main(int argc, char *argv[])
