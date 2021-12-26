@@ -108,5 +108,6 @@ void		ft_rrr(t_data *data);
 void		ft_ss(t_data *data);
 void		ft_free(t_data *data, int a);
 int			ft_atoie(const char *str);
+void		ft_pb_(t_data *data);
 
 #endif

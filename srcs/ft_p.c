@@ -3,14 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_p.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:13:32 by tnard             #+#    #+#             */
-/*   Updated: 2021/12/24 10:04:32 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 13:21:39 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	ft_pb_(t_data *data)
+{
+	t_pile	*tmp;
+
+	tmp = malloc(sizeof(t_pile));
+	if (!tmp)
+		return ;
+	if (data->size_b > 0)
+	{
+		tmp->i = data->pile_a->i;
+		tmp->next = data->pile_b;
+		data->pile_b = tmp;
+		tmp = data->pile_a;
+		data->pile_a = data->pile_a->next;
+	}
+	else if (data->size_b == 0)
+	{
+		tmp->i = data->pile_a->i;
+		data->pile_b = tmp;
+		data->pile_b->next = NULL;
+		tmp = data->pile_a;
+		data->pile_a = data->pile_a->next;
+		data->last_b = data->pile_b;
+	}
+	free(tmp);
+	ft_printf("", data->size_b++, data->size_a--);
+}
 
 void	ft_pa(t_data *data)
 {
