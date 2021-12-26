@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 09:47:05 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/24 08:45:46 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 01:08:20 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../includes/push_swap.h"
 
-long int	ft_atoi_base(char *str, char *base)
+long int	ft_atoie_base(char *str, char *base)
 {
 	long int	atoi;
 	int			negative;
@@ -79,7 +79,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	tab = malloc(sizeof(char) * 34);
 	if (!tab)
 		return (NULL);
-	num = ft_atoi_base(nbr, base_from);
+	num = ft_atoie_base(nbr, base_from);
 	i = ft_fill_tab(tab, num, base_to);
 	ft_rev_tab(tab, i);
 	tab[i] = '\0';

@@ -6,13 +6,13 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 17:08:43 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/25 16:10:00 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 01:22:35 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static void	ft_init(t_data *data, int *number, int size)
+void	ft_init(t_data *data, int *number, int size)
 {
 	int		x;
 
@@ -83,7 +83,7 @@ static void	ft_swap_radix2(t_data *data, long long d, int len_max)
 	}
 }
 
-static void	ft_convert(t_data *data, int *tab)
+void	ft_convert(t_data *data, int *tab)
 {
 	t_pile		*temp;
 	int			i;
@@ -100,11 +100,11 @@ static void	ft_convert(t_data *data, int *tab)
 		str1 = ft_convert_base(str, "0123456789", "0123");
 		if (temp->i == data->max)
 		{
-			temp->i = ft_atoi(str1);
+			temp->i = ft_atoie(str1);
 			data->max = temp->i;
 		}
 		else
-			temp->i = ft_atoi(str1);
+			temp->i = ft_atoie(str1);
 		free(str);
 		free(str1);
 		temp = temp->next;

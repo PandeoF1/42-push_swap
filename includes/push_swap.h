@@ -93,6 +93,7 @@ int			*ft_splittochar(char **str, int *y);
 int			ft_check_one_arg(char *str);
 int			ft_check_mult_arg(char **argv, int argc);
 char		*ft_strcat(char *dest, char *src);
+void		ft_init(t_data *data, int *number, int size);
 char		*ft_argc_to_tab(char **argv, int argc);
 
 void		ft_pa(t_data *data);
@@ -105,6 +106,7 @@ void		ft_rra(t_data *data);
 void		ft_rrb(t_data *data);
 void		ft_rrr(t_data *data);
 void		ft_ss(t_data *data);
-void		ft_free(t_data *data);
+void		ft_free(t_data *data, int a);
+int			ft_atoie(const char *str);
 
 #endif

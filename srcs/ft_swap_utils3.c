@@ -6,7 +6,7 @@
 /*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 15:32:57 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/25 15:37:27 by tnard            ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 01:08:20 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_check_one_arg(char *str)
 			if (str[x] == '0')
 				x++;
 			else
-				x += ft_int_len(ft_atoi(str + x));
+				x += ft_int_len(ft_atoie(str + x));
 			b++;
 		}
 		else if (str[x] == ' ')
@@ -107,7 +107,7 @@ int	ft_first_sort(char **data)
 	while (data[x])
 		x++;
 	while (++z < x - 1)
-		if (ft_atoi(data[z]) > ft_atoi(data[z + 1]))
+		if (ft_atoie(data[z]) > ft_atoie(data[z + 1]))
 			return (0);
 	return (1);
 }

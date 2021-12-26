@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asaffroy <asaffroy@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tnard <tnard@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 15:22:44 by asaffroy          #+#    #+#             */
-/*   Updated: 2021/12/24 15:37:47 by asaffroy         ###   ########lyon.fr   */
+/*   Updated: 2021/12/26 01:08:20 by tnard            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	*ft_splittochar(char **str, int *y)
 	(*y) = 0;
 	while (str[(*y)])
 	{
-		number[(*y)] = ft_atoi(str[(*y)]);
+		number[(*y)] = ft_atoie(str[(*y)]);
 		(*y)++;
 	}
 	return (number);

@@ -15,7 +15,7 @@
 int	ft_free_main(t_main *main, int a)
 {
 	free(main->number);
-	if (a == 1)
+	if (a == 1 || a == 0)
 		free(main->str);
 	if (a == 1 || a == 2)
 		free(main->sorted_tab);
@@ -80,11 +80,11 @@ void	ft_main(int argc, char *argv[], t_main main)
 		ft_free_main(&main, 0);
 		return ;
 	}
-	//if (main.size <= 8)
-	//	ft_sort(argc, argv, &main, &data);
-	//else
+	if (main.size <= 5)
+		ft_sort(argc, argv, &main, &data);
+	else
 		ft_sort_main(argc, argv, &main, &data);
-	ft_free(&data);
+	ft_free(&data, main.a);
 	ft_free_main(&main, main.a);
 }
 
