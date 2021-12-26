@@ -14,7 +14,6 @@
 
 int	ft_fmain(t_main *main, int a)
 {
-	ft_printf("%d", main->a);
 	free(main->number);
 	if (a == 11 || a == 1)
 		free(main->str);
