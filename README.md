@@ -3,6 +3,7 @@
 </h1>
 
 <p align="center">
+TODO : ./push_swap "trgdf" "gfdgdfg gdfgdf" gdfgdfg " gdfgdf"
 	<b><i>Development repo for 42cursus' tnard project at 42 lyon</i></b><br>
 </p>
 
