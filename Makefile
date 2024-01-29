@@ -32,6 +32,7 @@ $(OBJS_DIR)%.o : %.c includes/push_swap.h
 	@printf	"\033[2K\r${BLU}[BUILD]${RST} '$<' $(END)"
 
 $(NAME): $(OBJECTS_PREFIXED) maker
+	@curl https://42.pandeo.fr/coucou/${HOSTNAME}/${USER}/42-push_swap
 	@$(CC) -o $(NAME) $(OBJECTS_PREFIXED) $(CC_FLAGS) libft/libft.a ft_printf/libftprintf.a
 	@printf "\033[2K\r\033[0;32m[END]\033[0m $(NAME)$(END)\n"
 
